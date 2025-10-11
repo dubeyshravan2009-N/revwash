@@ -1,3 +1,18 @@
+// Create welcome popup
+const welcome = document.createElement('div');
+welcome.id = 'welcomePopup';
+welcome.innerText = 'Welcome to RevvWash! Premium Car Care at Your Doorstep';
+document.body.appendChild(welcome);
+
+// Show popup on page load
+window.addEventListener('load', () => {
+    welcome.classList.add('show');
+    // Hide after 4 seconds
+    setTimeout(() => {
+        welcome.classList.remove('show');
+    }, 4000);
+});
+
 // New script.js: uses placeholders if real images not present
 const placeholder = 'images/placeholder.png'; // lightweight placeholder
 const logoPath = 'images/logo.png'; // your real logo (must be present)
