@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RevvWash Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo"><img src="logo.png" alt="RevvWash Logo" width="120"></div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<section class="booking-form">
+  <h2>Book Your Car Wash</h2>
+  <form id="bookingForm">
+
+    <!-- Step 1: User Info -->
+    <div class="form-step" id="step1">
+      <h3>1. Your Details</h3>
+      <input type="text" id="fullName" placeholder="Full Name" required>
+      <input type="text" id="mobile" placeholder="Mobile Number" required>
+      <input type="text" id="address" placeholder="Full Address" required>
+      <input type="text" id="pincode" placeholder="Pin Code" required>
+      <button type="button" onclick="nextStep(1)">Next</button>
+    </div>
+
+    <!-- Step 2: Select Car Brand -->
+    <div class="form-step" id="step2" style="display:none;">
+      <h3>2. Select Car Brand</h3>
+      <div id="carBrands"></div>
+      <button type="button" onclick="prevStep(2)">Back</button>
+      <button type="button" onclick="nextStep(2)">Next</button>
+    </div>
+
+    <!-- Step 3: Select Car Model -->
+    <div class="form-step" id="step3" style="display:none;">
+      <h3>3. Select Car Model</h3>
+      <select id="carModel" required></select>
+      <button type="button" onclick="prevStep(3)">Back</button>
+      <button type="button" onclick="nextStep(3)">Next</button>
+    </div>
+
+    <!-- Step 4: Select Package -->
+    <div class="form-step" id="step4" style="display:none;">
+      <h3>4. Select Package</h3>
+      <select id="package" required>
+        <option value="">--Select Package--</option>
+        <option value="Full Wash">Full Car Clean - ₹999</option>
+        <option value="Waterless Wash">Waterless Car Clean - ₹499</option>
+        <option value="Interior Clean">Interior Clean - ₹499</option>
+        <option value="Polish Work">Only Polish Work - ₹299</option>
+      </select>
+      <button type="button" onclick="prevStep(4)">Back</button>
+      <button type="button" onclick="nextStep(4)">Next</button>
+    </div>
+
+    <!-- Step 5: Payment -->
+    <div class="form-step" id="step5" style="display:none;">
+      <h3>5. Payment</h3>
+      <select id="payment" required>
+        <option value="">--Select Payment Mode--</option>
+        <option value="Pay on Car Wash">Pay on Car Wash</option>
+        <option value="Card">Card</option>
+        <option value="UPI">UPI</option>
+        <option value="NetBanking">Net Banking</option>
+      </select>
+      <
