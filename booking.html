@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RevvWash - Book Wash</title>
+  <title>RevvWash - Book Your Wash</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Navbar -->
 <header class="navbar">
   <div class="logo">
     <img src="images/logo.png" alt="RevvWash Logo">
   </div>
   <nav>
     <ul>
-      <li><a href="home.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="booking.html" class="active">Book Wash</a></li>
       <li><a href="packages.html">Packages</a></li>
       <li><a href="about.html">About</a></li>
@@ -23,49 +22,56 @@
   </nav>
 </header>
 
-<section class="services-preview">
+<section class="car-brands">
   <h2>Select Your Car Brand</h2>
-  <div class="service-cards">
-    <div class="card">
-      <h3>Toyota</h3>
-    </div>
-    <div class="card">
-      <h3>Honda</h3>
-    </div>
-    <div class="card">
-      <h3>Hyundai</h3>
-    </div>
-    <div class="card">
-      <h3>Mahindra</h3>
-    </div>
-    <div class="card">
-      <h3>Nissan</h3>
-    </div>
-    <div class="card">
-      <h3>Tata</h3>
-    </div>
-    <div class="card">
-      <h3>Renault</h3>
-    </div>
-    <div class="card">
-      <h3>BMW</h3>
-    </div>
-    <div class="card">
-      <h3>Mercedes</h3>
-    </div>
+  <div class="brands-container">
+    <div class="brand" onclick="selectBrand('Toyota')">Toyota</div>
+    <div class="brand" onclick="selectBrand('Honda')">Honda</div>
+    <div class="brand" onclick="selectBrand('Hyundai')">Hyundai</div>
+    <div class="brand" onclick="selectBrand('Mahindra')">Mahindra</div>
+    <div class="brand" onclick="selectBrand('Nissan')">Nissan</div>
+    <div class="brand" onclick="selectBrand('Tata')">Tata</div>
+    <div class="brand" onclick="selectBrand('Renault')">Renault</div>
+    <div class="brand" onclick="selectBrand('BMW')">BMW</div>
+    <div class="brand" onclick="selectBrand('Mercedes')">Mercedes</div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 RevvWash. All Rights Reserved.</p>
-  <div class="socials">
-    <a href="https://instagram.com/shravan_dubey_2009" target="_blank">Instagram</a>
-    <a href="mailto:dubeyshravan2009@gmail.com">Email</a>
-    <a href="https://instagram.com/sharma9ty" target="_blank">Siddharth Instagram</a>
-    <a href="mailto:Siddharth.sharma020202@gmail.com">Siddharth Email</a>
+<section class="car-models">
+  <h2>Available Models</h2>
+  <div class="models-container" id="modelsContainer">
+    <!-- Models will load here dynamically -->
   </div>
-</footer>
+</section>
+
+<script>
+  const carModels = {
+    Toyota: ["Corolla","Camry","Fortuner","Yaris","Innova","Hilux","Urban Cruiser"],
+    Honda: ["City","Civic","Amaze","WR-V","Jazz","CR-V","BR-V"],
+    Hyundai: ["i10","i20","Creta","Venue","Tucson","Verna","Alcazar"],
+    Mahindra: ["Thar","Scorpio","XUV700","XUV300","Bolero","Marazzo"],
+    Nissan: ["Magnite","Kicks","Sunny","Altima","GT-R"],
+    Tata: ["Nexon","Harrier","Safari","Punch","Altroz"],
+    Renault: ["Kiger","Triber","Duster","Kwid"],
+    BMW: ["X1","X3","X5","X7","3 Series","5 Series","7 Series","Z4"],
+    Mercedes: ["A-Class","C-Class","E-Class","S-Class","GLA","GLC","GLE"]
+  };
+
+  function selectBrand(brand) {
+    const container = document.getElementById("modelsContainer");
+    container.innerHTML = "";
+    if (!carModels[brand]) return;
+
+    carModels[brand].forEach(model => {
+      const div = document.createElement("div");
+      div.className = "model";
+      div.innerHTML = `<p>${model}</p>`;
+      container.appendChild(div);
+    });
+
+    container.scrollIntoView({behavior: "smooth"});
+  }
+</script>
 
 </body>
 </html>
