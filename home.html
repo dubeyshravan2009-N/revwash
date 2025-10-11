@@ -10,29 +10,27 @@ body {
     font-family:'Montserrat', sans-serif;
     margin:0;
     padding:0;
-    background: linear-gradient(135deg, #0d47a1, #0b3a91);
-    color:#fff;
+    background:#e6f2ff; /* light blue */
+    color:#000;
 }
+
+/* Header */
 header {
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:15px 40px;
-    background:#071b3f;
+    background:#ffffff;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
     position:sticky;
     top:0;
     z-index:100;
 }
 header .logo { height:50px; }
-header nav a {
-    color:#fff;
-    text-decoration:none;
-    font-weight:600;
-    margin-left:25px;
-    transition:0.3s;
-}
-header nav a:hover { color:#ff4c00; }
+header nav a { color:#000; text-decoration:none; font-weight:600; margin-left:25px; transition:0.3s; }
+header nav a:hover { color:#0077cc; }
 
+/* Hero Section */
 .hero {
     display:flex;
     flex-direction:column;
@@ -40,12 +38,12 @@ header nav a:hover { color:#ff4c00; }
     align-items:center;
     text-align:center;
     height:80vh;
-    background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/hero-bg.jpg') center/cover no-repeat;
+    background:#cce6ff;
 }
-.hero h1 { font-size:3rem; margin-bottom:20px; color:#ffcc00; }
+.hero h1 { font-size:3rem; margin-bottom:20px; color:#0077cc; }
 .hero p { font-size:1.2rem; margin-bottom:30px; }
 .btn-primary {
-    background:#ff4c00;
+    background:#0077cc;
     color:#fff;
     padding:15px 35px;
     border-radius:30px;
@@ -53,8 +51,9 @@ header nav a:hover { color:#ff4c00; }
     font-weight:600;
     transition:all 0.3s;
 }
-.btn-primary:hover { background:#e04300; transform:scale(1.05); }
+.btn-primary:hover { background:#005fa3; transform:scale(1.05); }
 
+/* Features Section */
 .features {
     display:flex;
     justify-content:center;
@@ -63,20 +62,45 @@ header nav a:hover { color:#ff4c00; }
     padding:50px 20px;
 }
 .features div {
-    background:#071b3f;
+    background:#ffffff;
     padding:25px;
     border-radius:15px;
     text-align:center;
     width:200px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-.features div:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.7); }
-.features h3 { margin-bottom:10px; color:#ff4c00; }
+.features div:hover { transform:translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.1); }
+.features h3 { margin-bottom:10px; color:#0077cc; }
 
+/* Founders Section */
+.founders {
+    background:#ffffff;
+    padding:50px 20px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
+}
+.founder-card {
+    background:#e6f2ff;
+    border-radius:15px;
+    padding:25px;
+    width:220px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.founder-card:hover { transform:translateY(-10px); }
+.founder-card h3 { color:#0077cc; margin-bottom:10px; }
+.founder-card p { font-size:0.9rem; color:#000; }
+
+/* Footer */
 footer {
     text-align:center;
     padding:25px 0;
-    background:#071b3f;
+    background:#ffffff;
+    color:#000;
+    box-shadow:0 -2px 5px rgba(0,0,0,0.1);
 }
 </style>
 </head>
@@ -108,6 +132,17 @@ footer {
     <div>
         <h3>⚡ Quick & Professional</h3>
         <p>Shine in 30 minutes.</p>
+    </div>
+</section>
+
+<section class="founders">
+    <div class="founder-card">
+        <h3>Shravan Kumar Dubey</h3>
+        <p>Born 28/07/2009<br>Visionary founder, bold automotive mindset, ambitious entrepreneur.</p>
+    </div>
+    <div class="founder-card">
+        <h3>Siddharth Sharma</h3>
+        <p>Born 01/01/2009<br>Co-founder, practical thinker, focused on smooth operations.</p>
     </div>
 </section>
 
