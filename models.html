@@ -6,106 +6,18 @@
 <title>RevvWash - Car Models</title>
 <link rel="stylesheet" href="style.css">
 <style>
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #0d47a1; /* Bold blue automotive theme */
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
-
-/* Navbar */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 40px;
-    background-color: #071b3f;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-header .logo {
-    height: 50px;
-}
-
-header nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    margin-left: 25px;
-    transition: color 0.3s;
-}
-
-header nav a:hover {
-    color: #ff4c00;
-}
-
-/* Page Title */
-h2 {
-    text-align: center;
-    margin: 30px 0;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #ffcc00;
-}
-
-/* Models Container */
-.models-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* Individual Model Card */
-.model-card {
-    background: #071b3f;
-    width: 160px;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.model-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.7);
-}
-
-.model-card h3 {
-    margin: 10px 0 0 0;
-    font-size: 1rem;
-    color: #ff4c00;
-}
-
-/* Placeholder Circle for Brand Initial */
-.model-card .placeholder {
-    width: 60px;
-    height: 60px;
-    background-color: #ff4c00;
-    border-radius: 50%;
-    margin: 0 auto 10px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #071b3f;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 25px 0;
-    background-color: #071b3f;
-    color: #fff;
-    margin-top: 40px;
-}
+body { font-family:'Montserrat', sans-serif; background:#0d47a1; color:#fff; margin:0; padding:0; }
+header { display:flex; align-items:center; justify-content:space-between; padding:15px 40px; background:#071b3f; position:sticky; top:0; }
+header .logo { height:50px; }
+header nav a { color:#fff; text-decoration:none; font-weight:600; margin-left:25px; transition:0.3s; }
+header nav a:hover { color:#ff4c00; }
+h2 { text-align:center; margin:30px 0; font-size:2.5rem; color:#ffcc00; }
+.models-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px; }
+.model-card { background:#071b3f; width:160px; border-radius:15px; padding:20px; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.5); transition: transform 0.3s, box-shadow 0.3s; }
+.model-card:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.7); }
+.model-card h3 { margin:10px 0 0 0; font-size:1rem; color:#ff4c00; }
+.model-card .placeholder { width:60px; height:60px; background:#ff4c00; border-radius:50%; margin:0 auto 10px auto; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:1.2rem; color:#071b3f; }
+footer { text-align:center; padding:25px 0; background:#071b3f; color:#fff; margin-top:40px; }
 </style>
 </head>
 <body>
@@ -114,115 +26,58 @@ footer {
     <img src="images/logo-short.png" alt="RevvWash Logo" class="logo">
     <nav>
         <a href="home.html">Home</a>
-        <a href="booking.html">Book Wash</a>
+        <a href="booking.html">Back</a>
     </nav>
 </header>
 
-<h2>Select Your Car Model</h2>
+<h2 id="pageTitle">Car Models</h2>
 
-<div class="models-container">
+<div class="models-container" id="modelsContainer"></div>
 
-<!-- Toyota -->
-<div class="model-card"><div class="placeholder">T</div><h3>Corolla</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Fortuner</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Innova</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Yaris</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Urban Cruiser</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Glanza</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Hilux</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Rush</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Etios</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Prius</h3></div>
+<footer>&copy; 2025 RevvWash | All Rights Reserved</footer>
 
-<!-- Honda -->
-<div class="model-card"><div class="placeholder">H</div><h3>City</h3></div>
-<div class="model-card"><div class="placeholder">H</div><h3>Civic</h3></div>
-<div class="model-card"><div class="placeholder">H</div><h3>Amaze</h3></div>
-<div class="model-card"><div class="placeholder">H</div><h3>BR-V</h3></div>
-<div class="model-card"><div class="placeholder">H</div><h3>WR-V</h3></div>
-<div class="model-card"><div class="placeholder">H</div><h3>HR-V</h3></div>
-<div class="model-card"><div class="placeholder">H</div><h3>Accord</h3></div>
-<div class="model-card"><div class="placeholder">H</div><h3>Brio</h3></div>
-<div class="model-card"><div class="placeholder">H</div><h3>Ballade</h3></div>
+<script>
+// Brand models
+const allModels = {
+  Toyota: ["Corolla","Fortuner","Innova","Yaris","Urban Cruiser","Glanza","Hilux","Rush","Etios","Prius"],
+  Honda: ["City","Civic","Amaze","BR-V","WR-V","HR-V","Accord","Brio","Ballade"],
+  Hyundai: ["Creta","Verna","Venue","Kona","i20","Alcazar","Tucson","Santro","Grand i10"],
+  MarutiSuzuki: ["Swift","Alto","Baleno","Ciaz","Ertiga","S-Cross","Vitara Brezza","Eeco","Omni","Gypsy"],
+  BMW: ["3 Series","5 Series","7 Series","X1","X3","X5","Z4","i4","iX"],
+  Mercedes: ["A-Class","C-Class","E-Class","S-Class","GLE","GLC","GLB","CLA"],
+  Mahindra: ["Scorpio","XUV500","Thar","Bolero","Alturas G4","Xylo"],
+  Nissan: ["Magnite","Kicks","Terra","GT-R"],
+  Tata: ["Nexon","Harrier","Tigor","Altroz","Punch","Safari"],
+  Renault: ["Kwid","Duster","Captur","Kiger","Triber"]
+};
 
-<!-- Hyundai -->
-<div class="model-card"><div class="placeholder">Hy</div><h3>Creta</h3></div>
-<div class="model-card"><div class="placeholder">Hy</div><h3>Verna</h3></div>
-<div class="model-card"><div class="placeholder">Hy</div><h3>Venue</h3></div>
-<div class="model-card"><div class="placeholder">Hy</div><h3>Kona</h3></div>
-<div class="model-card"><div class="placeholder">Hy</div><h3>i20</h3></div>
-<div class="model-card"><div class="placeholder">Hy</div><h3>Alcazar</h3></div>
-<div class="model-card"><div class="placeholder">Hy</div><h3>Tucson</h3></div>
-<div class="model-card"><div class="placeholder">Hy</div><h3>Santro</h3></div>
-<div class="model-card"><div class="placeholder">Hy</div><h3>Grand i10</h3></div>
+// Get brand from URL
+const params = new URLSearchParams(window.location.search);
+const brand = params.get('brand');
 
-<!-- Maruti Suzuki -->
-<div class="model-card"><div class="placeholder">MS</div><h3>Swift</h3></div>
-<div class="model-card"><div class="placeholder">MS</div><h3>Alto</h3></div>
-<div class="model-card"><div class="placeholder">MS</div><h3>Baleno</h3></div>
-<div class="model-card"><div class="placeholder">MS</div><h3>Ciaz</h3></div>
-<div class="model-card"><div class="placeholder">MS</div><h3>Ertiga</h3></div>
-<div class="model-card"><div class="placeholder">MS</div><h3>S-Cross</h3></div>
-<div class="model-card"><div class="placeholder">MS</div><h3>Vitara Brezza</h3></div>
-<div class="model-card"><div class="placeholder">MS</div><h3>Eeco</h3></div>
-<div class="model-card"><div class="placeholder">MS</div><h3>Omni</h3></div>
-<div class="model-card"><div class="placeholder">MS</div><h3>Gypsy</h3></div>
+const container = document.getElementById('modelsContainer');
+const title = document.getElementById('pageTitle');
 
-<!-- BMW -->
-<div class="model-card"><div class="placeholder">B</div><h3>3 Series</h3></div>
-<div class="model-card"><div class="placeholder">B</div><h3>5 Series</h3></div>
-<div class="model-card"><div class="placeholder">B</div><h3>7 Series</h3></div>
-<div class="model-card"><div class="placeholder">B</div><h3>X1</h3></div>
-<div class="model-card"><div class="placeholder">B</div><h3>X3</h3></div>
-<div class="model-card"><div class="placeholder">B</div><h3>X5</h3></div>
-<div class="model-card"><div class="placeholder">B</div><h3>Z4</h3></div>
-<div class="model-card"><div class="placeholder">B</div><h3>i4</h3></div>
-<div class="model-card"><div class="placeholder">B</div><h3>iX</h3></div>
-
-<!-- Mercedes -->
-<div class="model-card"><div class="placeholder">M</div><h3>A-Class</h3></div>
-<div class="model-card"><div class="placeholder">M</div><h3>C-Class</h3></div>
-<div class="model-card"><div class="placeholder">M</div><h3>E-Class</h3></div>
-<div class="model-card"><div class="placeholder">M</div><h3>S-Class</h3></div>
-<div class="model-card"><div class="placeholder">M</div><h3>GLE</h3></div>
-<div class="model-card"><div class="placeholder">M</div><h3>GLC</h3></div>
-<div class="model-card"><div class="placeholder">M</div><h3>GLB</h3></div>
-<div class="model-card"><div class="placeholder">M</div><h3>CLA</h3></div>
-
-<!-- Mahindra -->
-<div class="model-card"><div class="placeholder">Ma</div><h3>Scorpio</h3></div>
-<div class="model-card"><div class="placeholder">Ma</div><h3>XUV500</h3></div>
-<div class="model-card"><div class="placeholder">Ma</div><h3>Thar</h3></div>
-<div class="model-card"><div class="placeholder">Ma</div><h3>Bolero</h3></div>
-<div class="model-card"><div class="placeholder">Ma</div><h3>Alturas G4</h3></div>
-<div class="model-card"><div class="placeholder">Ma</div><h3>Xylo</h3></div>
-
-<!-- Nissan -->
-<div class="model-card"><div class="placeholder">N</div><h3>Magnite</h3></div>
-<div class="model-card"><div class="placeholder">N</div><h3>Kicks</h3></div>
-<div class="model-card"><div class="placeholder">N</div><h3>Terra</h3></div>
-<div class="model-card"><div class="placeholder">N</div><h3>GT-R</h3></div>
-
-<!-- Tata -->
-<div class="model-card"><div class="placeholder">T</div><h3>Nexon</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Harrier</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Tigor</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Altroz</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Punch</h3></div>
-<div class="model-card"><div class="placeholder">T</div><h3>Safari</h3></div>
-
-<!-- Renault -->
-<div class="model-card"><div class="placeholder">R</div><h3>Kwid</h3></div>
-<div class="model-card"><div class="placeholder">R</div><h3>Duster</h3></div>
-<div class="model-card"><div class="placeholder">R</div><h3>Captur</h3></div>
-<div class="model-card"><div class="placeholder">R</div><h3>Kiger</h3></div>
-<div class="model-card"><div class="placeholder">R</div><h3>Triber</h3></div>
-
-</div>
-
-<footer>
-    &copy; 2025 RevvWash | All Rights Reserved
-</footer>
+if (brand && allModels[brand]) {
+  title.innerText = `${brand} Models`;
+  allModels[brand].forEach(model => {
+    const card = document.createElement('div');
+    card.className = "model-card";
+    card.innerHTML = `<div class="placeholder">${brand[0]}</div><h3>${model}</h3>`;
+    container.appendChild(card);
+  });
+} else {
+  title.innerText = "All Car Models";
+  for (let b in allModels) {
+    allModels[b].forEach(model => {
+      const card = document.createElement('div');
+      card.className = "model-card";
+      card.innerHTML = `<div class="placeholder">${b[0]}</div><h3>${model}</h3>`;
+      container.appendChild(card);
+    });
+  }
+}
+</script>
 
 </body>
 </html>
