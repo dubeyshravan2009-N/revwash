@@ -152,4 +152,57 @@ document.addEventListener('keydown', e => {
     e.preventDefault();
   }
 });
+// Show modal when user first visits
+window.addEventListener('load', () => {
+    if (!localStorage.getItem('revv_logged_in')) {
+        document.getElementById('authModal').style.display = 'flex';
+    } else {
+        console.log('Welcome back,', localStorage.getItem('revv_user_name'));
+    }
+});
+
+// Close modal
+document.getElementById('closeModal').onclick = () => {
+    document.getElementById('authModal').style.display = 'none';
+};
+
+// Register account
+document.getElementById('registerBtn').onclick = () => {
+    const name = document.getElementById('regName').value;
+    const email = document.getElementById('regEmail').value;
+    const phone = document.getElementById('regPhone').value;
+    const address = document.getElementById('regAddress').value;
+    const password = document.getElementById('regPassword').value;
+
+    if(!name || !email || !phone || !password){
+        alert('Fill all required fields');
+        return;
+    }
+
+    // Save in localStorage (simple demo)
+    localStorage.setItem('revv_logged_in', email);
+    localStorage.setItem('revv_user_name', name);
+    localStorage.setItem('revv_user_email', email);
+    localStorage.setItem('revv_user_phone', phone);
+    localStorage.setItem('revv_user_address', address);
+    localStorage.setItem('revv_user_password', password); // demo only
+
+    alert('Account created! Welcome, ' + name);
+    document.getElementById('authModal').style.display = 'none';
+};
+
+// Login account
+document.getElementById('loginBtn').onclick = () => {
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    if(email === localStorage.getItem('revv_user_email') && password === localStorage.getItem('revv_user_password')){
+        localStorage.setItem('revv_logged_in', email);
+        alert('Welcome back, ' + localStorage.getItem('revv_user_name'));
+        document.getElementById('authModal').style.display = 'none';
+    } else {
+        alert('Wrong email or password!');
+    }
+};
+
 
