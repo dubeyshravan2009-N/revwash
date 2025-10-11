@@ -4,15 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RevvWash | Home</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- Welcome Modal -->
+<div id="welcomeModal" class="modal">
+  <div class="modal-content">
+    <span id="closeWelcome">&times;</span>
+    <h2>Welcome to RevvWash</h2>
+    <p>Your Car. Our Care. Anytime. Anywhere.</p>
+  </div>
+</div>
+
 <!-- Auth Modal -->
-<div id="authModal" class="auth-modal">
-  <div class="auth-content">
-    <span id="closeModal" class="closeModal">×</span>
+<div id="authModal" class="modal">
+  <div class="modal-content">
+    <span id="closeAuth">&times;</span>
+
     <h2>Create Account</h2>
     <input id="regName" placeholder="Full Name" required>
     <input id="regEmail" placeholder="Email" required>
@@ -20,7 +30,9 @@
     <input id="regAddress" placeholder="Address">
     <input id="regPassword" type="password" placeholder="Password" required>
     <button id="registerBtn">Register</button>
+
     <hr>
+
     <h2>Login</h2>
     <input id="loginEmail" placeholder="Email">
     <input id="loginPassword" type="password" placeholder="Password">
@@ -37,12 +49,12 @@
       <li><a href="booking.html">Book Wash</a></li>
       <li><a href="packages.html">Packages</a></li>
       <li><a href="about.html">About</a></li>
-      <li><button id="authBtn" class="auth-btn">Login/Register</button></li>
+      <li><button id="openAuth">Login/Register</button></li>
     </ul>
   </nav>
 </header>
 
-<!-- Hero -->
+<!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
     <h1>Premium Car Wash at Your Doorstep</h1>
@@ -51,7 +63,7 @@
   </div>
 </section>
 
-<!-- Services Preview -->
+<!-- Services -->
 <section class="services-preview">
   <h2>Our Services</h2>
   <div class="service-cards">
@@ -74,8 +86,8 @@
 <footer>
   <p>© 2025 RevvWash. All Rights Reserved.</p>
   <div class="socials">
-    <a href="https://instagram.com/shravan_dubey_2009" target="_blank">Instagram Shravan</a>
-    <a href="https://instagram.com/sharma9ty" target="_blank">Instagram Siddharth</a>
+    <a href="https://instagram.com/shravan_dubey_2009" target="_blank">Shravan IG</a>
+    <a href="https://instagram.com/sharma9ty" target="_blank">Siddharth IG</a>
   </div>
 </footer>
 
