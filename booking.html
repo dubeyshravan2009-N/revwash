@@ -7,61 +7,86 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Navbar -->
-  <header>
-    <div class="container navbar">
-      <div class="logo">
-        <img src="images/logo.png" alt="RevvWash Logo">
-      </div>
-      <nav>
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="booking.html" class="active">Book Now</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Car Brands Section -->
-  <section class="services-preview booking-section">
-    <div class="container">
-      <h2>Select Your Car Brand</h2>
-      <div class="service-cards brands-container">
-        <div class="card brand" onclick="selectBrand('Toyota')">
-          <img src="brands/toyota.png" alt="Toyota Logo">
-          <h3>Toyota</h3>
-        </div>
-        <div class="card brand" onclick="selectBrand('Honda')">
-          <img src="brands/honda.png" alt="Honda Logo">
-          <h3>Honda</h3>
-        </div>
-        <div class="card brand" onclick="selectBrand('BMW')">
-          <img src="brands/bmw.png" alt="BMW Logo">
-          <h3>BMW</h3>
-        </div>
-        <div class="card brand" onclick="selectBrand('Mercedes')">
-          <img src="brands/mercedes.png" alt="Mercedes Logo">
-          <h3>Mercedes</h3>
-        </div>
-        <!-- Add more brands as needed -->
-      </div>
-    </div>
-  </section>
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="RevvWash Logo">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="booking.html" class="active">Book Wash</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer">
-      <p>&copy; 2025 RevvWash. All Rights Reserved.</p>
-      <div class="socials">
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">WhatsApp</a>
-      </div>
-    </div>
-  </footer>
+<!-- Hero Section -->
+<section class="hero booking-hero">
+  <div class="hero-content">
+    <h1>Select Your Car Brand</h1>
+    <p>Choose your car brand to continue booking your premium car wash.</p>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- Brands Section -->
+<section class="car-brands">
+  <div class="brands-container">
+    <div class="brand" onclick="selectBrand('Toyota')">
+      <img src="brands/toyota.png" alt="Toyota">
+      <p>Toyota</p>
+    </div>
+    <div class="brand" onclick="selectBrand('Honda')">
+      <img src="brands/honda.png" alt="Honda">
+      <p>Honda</p>
+    </div>
+    <div class="brand" onclick="selectBrand('BMW')">
+      <img src="brands/bmw.png" alt="BMW">
+      <p>BMW</p>
+    </div>
+    <div class="brand" onclick="selectBrand('Mercedes')">
+      <img src="brands/mercedes.png" alt="Mercedes">
+      <p>Mercedes</p>
+    </div>
+    <div class="brand" onclick="selectBrand('Maruti Suzuki')">
+      <img src="brands/maruti.png" alt="Maruti Suzuki">
+      <p>Maruti Suzuki</p>
+    </div>
+    <div class="brand" onclick="selectBrand('Hyundai')">
+      <img src="brands/hyundai.png" alt="Hyundai">
+      <p>Hyundai</p>
+    </div>
+    <div class="brand" onclick="selectBrand('Mahindra')">
+      <img src="brands/mahindra.png" alt="Mahindra">
+      <p>Mahindra</p>
+    </div>
+    <div class="brand" onclick="selectBrand('Nissan')">
+      <img src="brands/nissan.png" alt="Nissan">
+      <p>Nissan</p>
+    </div>
+    <div class="brand" onclick="selectBrand('Tata')">
+      <img src="brands/tata.png" alt="Tata">
+      <p>Tata</p>
+    </div>
+    <div class="brand" onclick="selectBrand('Renault')">
+      <img src="brands/renault.png" alt="Renault">
+      <p>Renault</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 RevvWash | All Rights Reserved</p>
+  <div class="socials">
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
+    <a href="#">WhatsApp</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
