@@ -1,6 +1,12 @@
 // New script.js: uses placeholders if real images not present
 const placeholder = 'images/placeholder.png'; // lightweight placeholder
 const logoPath = 'images/logo.png'; // your real logo (must be present)
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 // Demo data
 const models = [
