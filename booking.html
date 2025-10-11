@@ -1,56 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RevvWash - Select Car Brand</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RevvWash - Select Car Brand</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background: #0d47a1; color: #fff; }
+    header { display:flex; justify-content: space-between; align-items:center; padding:15px 40px; background:#071b3f; position:sticky; top:0; }
+    header .logo { height:50px; }
+    header nav a { color:#fff; text-decoration:none; font-weight:600; margin-left:20px; transition:0.3s; }
+    header nav a:hover { color:#ff4c00; }
+    h2 { text-align:center; margin:30px 0; font-size:2.5rem; color:#ffcc00; }
+    .brands-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px; }
+    .brand-card { background:#071b3f; padding:20px; width:150px; text-align:center; border-radius:15px; cursor:pointer; transition:0.3s; }
+    .brand-card:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.7); }
+  </style>
 </head>
 <body>
 
-<header class="navbar">
-  <div class="logo"><img src="images/logo.png" alt="RevvWash Logo"></div>
+<header>
+  <img src="images/logo-short.png" alt="RevvWash Logo" class="logo">
   <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="booking.html" class="active">Book Wash</a></li>
-      <li><a href="packages.html">Packages</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
+    <a href="home.html">Home</a>
   </nav>
 </header>
 
-<section class="hero booking-hero">
-  <div class="hero-content">
-    <h1>Select Your Car Brand</h1>
-    <p>Pick your car brand to continue booking your premium car wash.</p>
-  </div>
-</section>
+<h2>Select Your Car Brand</h2>
 
-<section class="car-brands">
-  <div class="brands-container">
-    <div class="brand" onclick="selectBrand('Toyota')"><img src="brands/toyota.png" alt="Toyota"><p>Toyota</p></div>
-    <div class="brand" onclick="selectBrand('Honda')"><img src="brands/honda.png" alt="Honda"><p>Honda</p></div>
-    <div class="brand" onclick="selectBrand('BMW')"><img src="brands/bmw.png" alt="BMW"><p>BMW</p></div>
-    <div class="brand" onclick="selectBrand('Mercedes')"><img src="brands/mercedes.png" alt="Mercedes"><p>Mercedes</p></div>
-    <div class="brand" onclick="selectBrand('Maruti Suzuki')"><img src="brands/maruti.png" alt="Maruti Suzuki"><p>Maruti Suzuki</p></div>
-    <div class="brand" onclick="selectBrand('Hyundai')"><img src="brands/hyundai.png" alt="Hyundai"><p>Hyundai</p></div>
-    <div class="brand" onclick="selectBrand('Mahindra')"><img src="brands/mahindra.png" alt="Mahindra"><p>Mahindra</p></div>
-    <div class="brand" onclick="selectBrand('Nissan')"><img src="brands/nissan.png" alt="Nissan"><p>Nissan</p></div>
-    <div class="brand" onclick="selectBrand('Tata')"><img src="brands/tata.png" alt="Tata"><p>Tata</p></div>
-    <div class="brand" onclick="selectBrand('Renault')"><img src="brands/renault.png" alt="Renault"><p>Renault</p></div>
-  </div>
-</section>
+<div class="brands-container">
+  <div class="brand-card" onclick="location.href='models.html?brand=Toyota'">Toyota</div>
+  <div class="brand-card" onclick="location.href='models.html?brand=Honda'">Honda</div>
+  <div class="brand-card" onclick="location.href='models.html?brand=Hyundai'">Hyundai</div>
+  <div class="brand-card" onclick="location.href='models.html?brand=MarutiSuzuki'">Maruti Suzuki</div>
+  <div class="brand-card" onclick="location.href='models.html?brand=BMW'">BMW</div>
+  <div class="brand-card" onclick="location.href='models.html?brand=Mercedes'">Mercedes</div>
+  <div class="brand-card" onclick="location.href='models.html?brand=Mahindra'">Mahindra</div>
+  <div class="brand-card" onclick="location.href='models.html?brand=Nissan'">Nissan</div>
+  <div class="brand-card" onclick="location.href='models.html?brand=Tata'">Tata</div>
+  <div class="brand-card" onclick="location.href='models.html?brand=Renault'">Renault</div>
+</div>
 
-<footer>
-  <p>© 2025 RevvWash | All Rights Reserved</p>
-  <div class="socials">
-    <a href="#">Instagram</a>
-    <a href="#">Facebook</a>
-    <a href="#">WhatsApp</a>
-  </div>
-</footer>
-
-<script src="js/script.js"></script>
 </body>
 </html>
