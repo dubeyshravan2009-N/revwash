@@ -1,53 +1,184 @@
-/* ===== Hero Section for Booking ===== */
-.booking-hero {
-  height:50vh;
+/* ===== Global Styles ===== */
+:root {
+  --primary-blue: #007BFF;
+  --secondary-dark: #0b1d3a;
+  --light-bg: #f0f4f8;
+  --white: #ffffff;
+  --radius: 12px;
+  --gold: #FFD700;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Montserrat', sans-serif;
+}
+
+body {
+  color:var(--secondary-dark);
+  background:var(--white);
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 50px;
+  background:var(--primary-blue);
+  color:var(--white);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.navbar .logo img {
+  height:50px;
+}
+.navbar nav ul {
+  display:flex;
+  gap:25px;
+  list-style:none;
+}
+.navbar nav ul li a {
+  text-decoration:none;
+  color:var(--white);
+  font-weight:600;
+  transition:0.3s;
+}
+.navbar nav ul li a.active,
+.navbar nav ul li a:hover {
+  color:var(--gold);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  height:70vh;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
   color:#fff;
-  background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-             url('https://via.placeholder.com/1920x600/007BFF/ffffff?text=Select+Your+Car+Brand') center/cover no-repeat;
+  background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/hero-bg.jpg') center/cover no-repeat;
   animation:fadeIn 1.5s ease;
 }
-
-/* ===== Car Brands ===== */
-.car-brands {
-  padding:60px 30px;
-  background:#f0f4f8;
+.hero h1 {
+  font-size:3rem;
+  font-weight:700;
+  margin-bottom:15px;
 }
-.brands-container {
+.hero p {
+  font-size:1.2rem;
+  font-weight:500;
+}
+.btn-primary {
+  background:var(--gold);
+  color:var(--secondary-dark);
+  padding:12px 28px;
+  border-radius:50px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+}
+.btn-primary:hover {
+  background:#e0b800;
+  transform:scale(1.05);
+}
+
+/* ===== Sections ===== */
+section {
+  padding:60px 30px;
+}
+
+/* ===== Services Cards ===== */
+.service-cards,
+.founders-grid,
+.brands-container,
+.packages-container,
+.models-container {
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:25px;
 }
-.brand {
-  background:#fff;
+
+.card,
+.brand,
+.package-card,
+.model-card {
+  background:var(--white);
   padding:20px;
-  width:180px;
-  border-radius:12px;
+  width:250px;
+  border-radius:var(--radius);
   box-shadow:0 8px 25px rgba(0,0,0,0.1);
-  cursor:pointer;
   transition:transform 0.3s, box-shadow 0.3s;
   text-align:center;
 }
-.brand:hover {
-  transform:translateY(-6px);
+.card:hover,
+.brand:hover,
+.package-card:hover,
+.model-card:hover {
+  transform:translateY(-8px);
   box-shadow:0 12px 30px rgba(0,0,0,0.15);
 }
-.brand img {
+.card h3,
+.brand p,
+.package-card h3,
+.model-card h3 {
+  color:var(--primary-blue);
+  margin-bottom:10px;
+}
+.brand img,
+.package-card img,
+.model-card img {
   width:100px;
   height:auto;
   margin-bottom:10px;
 }
-.brand p {
-  font-weight:600;
-  color:#0b1d3a;
+
+/* ===== Founders Section ===== */
+.about-founders h2 {
+  text-align:center;
+  font-size:2.5rem;
+  margin-bottom:20px;
+}
+.about-founders p {
+  max-width:800px;
+  margin:0 auto 40px;
+}
+.founders-grid .card h3 {
+  color:var(--primary-blue);
+}
+
+/* ===== Footer ===== */
+footer {
+  background:var(--secondary-dark);
+  color:var(--white);
+  text-align:center;
+  padding:30px 20px;
+}
+footer .socials a {
+  color:var(--gold);
+  margin:0 10px;
+  text-decoration:none;
+  transition:0.3s;
+}
+footer .socials a:hover {
+  color:var(--white);
 }
 
 /* ===== Animations ===== */
 @keyframes fadeIn {
   from {opacity:0;}
   to {opacity:1;}
+}
+
+/* ===== Responsive ===== */
+@media(max-width:768px) {
+  .navbar nav ul {flex-direction:column; gap:15px;}
+  .brands-container,
+  .service-cards,
+  .founders-grid,
+  .packages-container,
+  .models-container {flex-direction:column; align-items:center;}
 }
