@@ -3,218 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RevvWash - Select Package</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-body {
-    font-family:'Montserrat', sans-serif;
-    background:#e6f2ff;
-    margin:0;
-    padding:0;
-    color:#000;
-}
-
-header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    background:#ffffff;
-    box-shadow:0 2px 5px rgba(0,0,0,0.1);
-    position:sticky;
-    top:0;
-    z-index:100;
-}
-header .logo { height:50px; }
-header nav a { color:#000; text-decoration:none; font-weight:600; margin-left:25px; transition:0.3s; }
-header nav a:hover { color:#0077cc; }
-
-h2 {
-    text-align:center;
-    margin:30px 0;
-    font-size:2.5rem;
-    color:#0077cc;
-    text-transform:uppercase;
-}
-
-.packages-container {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-    padding:20px;
-}
-
-.package-card {
-    background:#ffffff;
-    width:220px;
-    border-radius:15px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor:pointer;
-}
-.package-card:hover {
-    transform:translateY(-10px) scale(1.05);
-    box-shadow:0 10px 20px rgba(0,0,0,0.2);
-}
-.package-card h3 { margin-bottom:10px; color:#0077cc; }
-.package-card p { font-size:0.95rem; color:#000; }
-
-footer {
-    text-align:center;
-    padding:25px 0;
-    background:#ffffff;
-    color:#000;
-    box-shadow:0 -2px 5px rgba(0,0,0,0.1);
-}
-</style>
+<title>RevvWash | Packages</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <img src="images/logo-short.png" alt="RevvWash Logo" class="logo">
-    <nav>
-        <a href="home.html">Home</a>
-        <a href="models.html">Back</a>
-    </nav>
+<header class="navbar">
+  <div class="logo"><img src="images/logo.png" alt="RevvWash Logo"></div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="booking.html">Back</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
 </header>
 
-<h2>Select a Wash Package</h2>
+<section class="packages">
+  <h2>Select a Wash Package</h2>
+  <div class="packages-container" id="packagesContainer">
+    <!-- Packages loaded by JS -->
+  </div>
+</section>
 
-<div class="packages-container" id="packagesContainer"></div>
-
-<footer>&copy; 2025 RevvWash | All Rights Reserved</footer>
-
-<script>
-// Sample packages (replace with real prices & details if needed)
-const packages = [
-  {name:"Exterior Wash", desc:"Shine your car like new with expert exterior cleaning.", price:"₹499"},
-  {name:"Interior Detailing", desc:"Deep clean your car’s interior for a fresh ride.", price:"₹699"},
-  {name:"Full Detailing", desc:"Complete car care including interior & exterior.", price:"₹1299"},
-  {name:"Premium Wash", desc:"Luxury detailing with waxing and polishing.", price:"₹1999"}
-];
-
-const container = document.getElementById('packagesContainer');
-
-packages.forEach(pkg => {
-  const card = document.createElement('div');
-  card.className = "package-card";
-  card.innerHTML = `<h3>${pkg.name}</h3><p>${pkg.desc}</p><strong>${pkg.price}</strong>`;
-  container.appendChild(card);
-});
-</script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RevvWash - Select Package</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-body {
-    font-family:'Montserrat', sans-serif;
-    background:#e6f2ff;
-    margin:0;
-    padding:0;
-    color:#000;
-}
-
-header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 40px;
-    background:#ffffff;
-    box-shadow:0 2px 5px rgba(0,0,0,0.1);
-    position:sticky;
-    top:0;
-    z-index:100;
-}
-header .logo { height:50px; }
-header nav a { color:#000; text-decoration:none; font-weight:600; margin-left:25px; transition:0.3s; }
-header nav a:hover { color:#0077cc; }
-
-h2 {
-    text-align:center;
-    margin:30px 0;
-    font-size:2.5rem;
-    color:#0077cc;
-    text-transform:uppercase;
-}
-
-.packages-container {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-    padding:20px;
-}
-
-.package-card {
-    background:#ffffff;
-    width:220px;
-    border-radius:15px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor:pointer;
-}
-.package-card:hover {
-    transform:translateY(-10px) scale(1.05);
-    box-shadow:0 10px 20px rgba(0,0,0,0.2);
-}
-.package-card h3 { margin-bottom:10px; color:#0077cc; }
-.package-card p { font-size:0.95rem; color:#000; }
-
-footer {
-    text-align:center;
-    padding:25px 0;
-    background:#ffffff;
-    color:#000;
-    box-shadow:0 -2px 5px rgba(0,0,0,0.1);
-}
-</style>
-</head>
-<body>
-
-<header>
-    <img src="images/logo-short.png" alt="RevvWash Logo" class="logo">
-    <nav>
-        <a href="home.html">Home</a>
-        <a href="models.html">Back</a>
-    </nav>
-</header>
-
-<h2>Select a Wash Package</h2>
-
-<div class="packages-container" id="packagesContainer"></div>
-
-<footer>&copy; 2025 RevvWash | All Rights Reserved</footer>
-
-<script>
-// Sample packages (replace with real prices & details if needed)
-const packages = [
-  {name:"Exterior Wash", desc:"Shine your car like new with expert exterior cleaning.", price:"₹499"},
-  {name:"Interior Detailing", desc:"Deep clean your car’s interior for a fresh ride.", price:"₹699"},
-  {name:"Full Detailing", desc:"Complete car care including interior & exterior.", price:"₹1299"},
-  {name:"Premium Wash", desc:"Luxury detailing with waxing and polishing.", price:"₹1999"}
-];
-
-const container = document.getElementById('packagesContainer');
-
-packages.forEach(pkg => {
-  const card = document.createElement('div');
-  card.className = "package-card";
-  card.innerHTML = `<h3>${pkg.name}</h3><p>${pkg.desc}</p><strong>${pkg.price}</strong>`;
-  container.appendChild(card);
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
