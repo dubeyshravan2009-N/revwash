@@ -1,208 +1,78 @@
-// Create welcome popup
-const welcome = document.createElement('div');
-welcome.id = 'welcomePopup';
-welcome.innerText = 'Welcome to RevvWash! Premium Car Care at Your Doorstep';
-document.body.appendChild(welcome);
+// Welcome Modal
+const welcomeModal = document.getElementById("welcomeModal");
+const closeWelcome = document.getElementById("closeWelcome");
+if(!localStorage.getItem("visited")){
+    welcomeModal.style.display="flex";
+    localStorage.setItem("visited","true");
+}
+closeWelcome?.addEventListener("click",()=>welcomeModal.style.display="none");
 
-// Show popup on page load
-window.addEventListener('load', () => {
-    welcome.classList.add('show');
-    // Hide after 4 seconds
-    setTimeout(() => {
-        welcome.classList.remove('show');
-    }, 4000);
+// Auth Modal
+const authModal = document.getElementById("authModal");
+document.getElementById("openAuth")?.addEventListener("click",()=>authModal.style.display="flex");
+document.getElementById("closeAuth")?.addEventListener("click",()=>authModal.style.display="none");
+
+// Register/Login Logic
+const registerBtn = document.getElementById("registerBtn");
+const loginBtn = document.getElementById("loginBtn");
+
+registerBtn?.addEventListener("click",()=>{
+    const name=document.getElementById("regName").value;
+    const email=document.getElementById("regEmail").value;
+    const phone=document.getElementById("regPhone").value;
+    const address=document.getElementById("regAddress").value;
+    const password=document.getElementById("regPassword").value;
+    if(name && email && phone && password){
+        const user={name,email,phone,address,password};
+        localStorage.setItem(email,JSON.stringify(user));
+        alert("Account Created!");
+        authModal.style.display="none";
+    } else alert("Fill all required fields!");
 });
 
-// New script.js: uses placeholders if real images not present
-const placeholder = 'images/placeholder.png'; // lightweight placeholder
-const logoPath = 'images/logo.png'; // your real logo (must be present)
-body {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-// Demo data
-const models = [
-  { id: 'hatch', name: 'Hatchback', img: placeholder },
-  { id: 'sedan', name: 'Sedan', img: placeholder },
-  { id: 'suv', name: 'SUV', img: placeholder },
-  { id: 'lux', name: 'Luxury', img: placeholder }
-];
-
-const packages = [
-  { id: 'basic', title: 'Basic Wash', price: '299', desc: 'Exterior wash, rinse & hand dry' },
-  { id: 'standard', title: 'Standard', price: '499', desc: 'Exterior + interior vacuuming' },
-  { id: 'premium', title: 'Premium', price: '999', desc: 'Full detailing & polish' }
-];
-
-// create a tiny placeholder if not present (1x1 png-ish using data URI)
-function ensurePlaceholder(){
-  fetch(placeholder).catch(()=>{
-    // create a tiny data uri image and save to an <img> element's src when needed
-    // we won't create files on server; just rely on data URI where needed
-  });
-}
-
-function populateModels(){
-  const cont = document.getElementById('modelsContainer');
-  if(!cont) return;
-  cont.innerHTML = '';
-  models.forEach(m=>{
-    const el = document.createElement('div');
-    el.className='card';
-    el.innerHTML = `<img src="${m.img}" alt="${m.name}"><h3>${m.name}</h3><p>Choose this category</p>`;
-    cont.appendChild(el);
-  });
-}
-
-function populatePackages(){
-  const cont = document.getElementById('packagesContainer');
-  if(!cont) return;
-  cont.innerHTML='';
-  packages.forEach(p=>{
-    const el = document.createElement('div');
-    el.className='card';
-    el.innerHTML = `<h3>${p.title} — ₹${p.price}</h3><p>${p.desc}</p><div style="margin-top:12px"><a class="btn btn-primary" href="booking.html" onclick="selectPackage('${p.id}')">Select</a></div>`;
-    cont.appendChild(el);
-  });
-}
-
-function fillBookingSelects(){
-  const modelSelect = document.getElementById('modelSelect');
-  const packageSelect = document.getElementById('packageSelect');
-  if(modelSelect){
-    modelSelect.innerHTML = '<option value="">Choose model</option>';
-    models.forEach(m=> modelSelect.innerHTML += `<option value="${m.id}">${m.name}</option>`);
-  }
-  if(packageSelect){
-    packageSelect.innerHTML = '<option value="">Choose package</option>';
-    packages.forEach(p=> packageSelect.innerHTML += `<option value="${p.id}">${p.title} — ₹${p.price}</option>`);
-  }
-}
-
-function selectPackage(id){
-  localStorage.setItem('revv_selected_package', id);
-}
-
-function initBookingForm(){
-  const form = document.getElementById('bookingForm');
-  if(!form) return;
-  fillBookingSelects();
-  const pre = localStorage.getItem('revv_selected_package');
-  if(pre){
-    const sel = document.getElementById('packageSelect');
-    if(sel) sel.value = pre;
-    localStorage.removeItem('revv_selected_package');
-  }
-
-  form.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const name = document.getElementById('customerName').value.trim();
-    const phone = document.getElementById('customerPhone').value.trim();
-    const model = document.getElementById('modelSelect').value;
-    const pack = document.getElementById('packageSelect').value;
-    const dt = document.getElementById('dateTime').value;
-    const addr = document.getElementById('address').value.trim();
-
-    if(!name || !phone || !model || !pack || !dt || !addr){
-      showMsg('Please fill all fields','error'); return;
-    }
-
-    showMsg('Booking saved! We will contact you shortly.','success');
-    form.reset();
-  });
-
-  document.getElementById('clearBtn')?.addEventListener('click', ()=> form.reset());
-}
-
-function showMsg(txt, type){
-  const el = document.getElementById('bookingMsg');
-  if(!el) return;
-  el.textContent = txt;
-  el.style.color = type === 'error' ? 'crimson' : 'green';
-  setTimeout(()=> el.textContent = '', 5000);
-}
-
-function initWhatsApp(){
-  const num = '91XXXXXXXXXX'; // replace with your number
-  const btns = document.querySelectorAll('#whatsappBtn, #whatsappBtn2, .floating-whatsapp');
-  btns.forEach(b=>{
-    if(!b) return;
-    b.href = `https://wa.me/${num}`;
-    b.target = '_blank';
-  });
-}
-
-window.addEventListener('load', ()=>{
-  populateModels();
-  populatePackages();
-  fillBookingSelects();
-  initBookingForm();
-  initWhatsApp();
-  document.querySelectorAll('#year,#year2,#year3,#year4,#year5,#year6').forEach(el => el.textContent = new Date().getFullYear());
-});
-// Block right-click
-document.addEventListener('contextmenu', e => e.preventDefault());
-
-// Block DevTools shortcuts
-document.addEventListener('keydown', e => {
-  if ((e.ctrlKey && (e.key==='u'||e.key==='U')) || e.key==='F12' || (e.ctrlKey && e.shiftKey && (e.key==='I'||e.key==='J'))) {
-    e.preventDefault();
-  }
-});
-// Show modal when user first visits
-window.addEventListener('load', () => {
-    if (!localStorage.getItem('revv_logged_in')) {
-        document.getElementById('authModal').style.display = 'flex';
-    } else {
-        console.log('Welcome back,', localStorage.getItem('revv_user_name'));
-    }
+loginBtn?.addEventListener("click",()=>{
+    const email=document.getElementById("loginEmail").value;
+    const password=document.getElementById("loginPassword").value;
+    const data=localStorage.getItem(email);
+    if(data){
+        const user=JSON.parse(data);
+        if(user.password===password){
+            alert("Login Successful! Welcome "+user.name);
+            authModal.style.display="none";
+        } else alert("Wrong password!");
+    } else alert("Email not registered!");
 });
 
-// Close modal
-document.getElementById('closeModal').onclick = () => {
-    document.getElementById('authModal').style.display = 'none';
+// Car Models
+const models={ 
+    "Toyota":["Corolla","Camry","Fortuner","Innova","Yaris"],
+    "Honda":["City","Civic","Jazz","CR-V","WR-V"],
+    "Hyundai":["i20","i10","Creta","Verna","Venue"],
+    "Mahindra":["XUV700","Thar","Scorpio","Bolero","Marazzo"],
+    "Nissan":["Magnite","Kicks","GT-R","Sunny","X-Trail"],
+    "Tata":["Nexon","Harrier","Tiago","Altroz","Safari"],
+    "Renault":["Kiger","Duster","Triber","Kwid","Captur"],
+    "BMW":["3 Series","5 Series","X1","X5","X6"],
+    "Mercedes":["C-Class","E-Class","GLA","GLE","S-Class"]
 };
 
-// Register account
-document.getElementById('registerBtn').onclick = () => {
-    const name = document.getElementById('regName').value;
-    const email = document.getElementById('regEmail').value;
-    const phone = document.getElementById('regPhone').value;
-    const address = document.getElementById('regAddress').value;
-    const password = document.getElementById('regPassword').value;
+function selectBrand(brand){
+    localStorage.setItem("selectedBrand",brand);
+    window.location.href="models.html";
+}
 
-    if(!name || !email || !phone || !password){
-        alert('Fill all required fields');
-        return;
+window.onload=function(){
+    const brandTitle=document.getElementById("brandTitle");
+    const modelsContainer=document.getElementById("modelsContainer");
+    const brand=localStorage.getItem("selectedBrand");
+    if(brand && modelsContainer){
+        brandTitle.textContent=brand+" Models";
+        modelsContainer.innerHTML="";
+        models[brand].forEach(m=>{
+            const div=document.createElement("div");
+            div.className="card";
+            div.textContent=m;
+            modelsContainer.appendChild(div);
+        });
     }
-
-    // Save in localStorage (simple demo)
-    localStorage.setItem('revv_logged_in', email);
-    localStorage.setItem('revv_user_name', name);
-    localStorage.setItem('revv_user_email', email);
-    localStorage.setItem('revv_user_phone', phone);
-    localStorage.setItem('revv_user_address', address);
-    localStorage.setItem('revv_user_password', password); // demo only
-
-    alert('Account created! Welcome, ' + name);
-    document.getElementById('authModal').style.display = 'none';
-};
-
-// Login account
-document.getElementById('loginBtn').onclick = () => {
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
-
-    if(email === localStorage.getItem('revv_user_email') && password === localStorage.getItem('revv_user_password')){
-        localStorage.setItem('revv_logged_in', email);
-        alert('Welcome back, ' + localStorage.getItem('revv_user_name'));
-        document.getElementById('authModal').style.display = 'none';
-    } else {
-        alert('Wrong email or password!');
-    }
-};
-
-
+}
