@@ -3,42 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RevvWash - Home</title>
+  <title>RevvWash - Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="RevvWash Logo" width="150">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="booking.html">Book Now</a>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <h1>Your Car. Our Care. Anytime. Anywhere.</h1>
-    <p>On-demand doorstep car wash service in India.</p>
-    <a href="booking.html" class="btn">Book Your Wash</a>
-  </section>
+<!-- Fullscreen Login / Signup Container -->
+<div class="login-container" id="loginContainer">
 
-  <section class="features">
-    <div>
-      <h3>🚗 Doorstep Service</h3>
-      <p>We come wherever you are.</p>
-    </div>
-    <div>
-      <h3>💧 Eco-Friendly Wash</h3>
-      <p>Water-efficient and safe for your car.</p>
-    </div>
-    <div>
-      <h3>⚡ Quick & Professional</h3>
-      <p>Shine in 30 minutes.</p>
-    </div>
-  </section>
+  <div class="logo-section">
+    <img src="logo.png" alt="RevvWash Logo" class="logo">
+    <h1 class="slogan">Your Car. Our Care. Anytime. Anywhere.</h1>
+  </div>
 
-  <footer>
-    <p>© 2025 RevvWash | All Rights Reserved</p>
-  </footer>
+  <div class="form-section">
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Sign Up / Login</button>
+    </form>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
-
