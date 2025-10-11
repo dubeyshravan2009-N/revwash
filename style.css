@@ -18,11 +18,12 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: linear-gradient(90deg, #FF4C00, #FF6A00);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: background 0.3s, padding 0.3s;
 }
 
 .navbar .logo img {
@@ -38,11 +39,11 @@ body {
 
 .navbar nav ul li a {
     text-decoration: none;
-    color: #222;
+    color: #fff;
     font-weight: 600;
     font-size: 1rem;
     position: relative;
-    transition: color 0.3s;
+    transition: all 0.3s;
 }
 
 .navbar nav ul li a::after {
@@ -50,7 +51,7 @@ body {
     display: block;
     width: 0;
     height: 3px;
-    background: #FF4C00;
+    background: #fff;
     transition: width 0.3s;
     border-radius: 2px;
     margin-top: 5px;
@@ -63,12 +64,13 @@ body {
 
 .navbar nav ul li a:hover,
 .navbar nav ul li a.active {
-    color: #FF4C00;
+    text-shadow: 0 0 10px rgba(255,255,255,0.8);
+    transform: scale(1.05);
 }
 
 /* ===== Hero Section ===== */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../images/hero-bg.jpg') no-repeat center center/cover;
     height: 90vh;
     display: flex;
     justify-content: center;
@@ -79,10 +81,13 @@ body {
 }
 
 .hero h1 {
-    font-size: 3.2rem;
+    font-size: 3.5rem;
+    font-weight: 800;
     margin-bottom: 20px;
-    font-weight: 700;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+    background: linear-gradient(90deg, #FF4C00, #FF9500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
 .hero p {
@@ -97,19 +102,19 @@ body {
 .btn-primary {
     background-color: #FF4C00;
     color: #fff;
-    padding: 15px 35px;
+    padding: 18px 40px;
     border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(255,76,0,0.5);
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    box-shadow: 0 5px 15px rgba(255,76,0,0.4);
-    transition: all 0.3s;
+    transition: all 0.4s;
 }
 
 .btn-primary:hover {
     background-color: #e04300;
-    transform: scale(1.08);
-    box-shadow: 0 8px 20px rgba(255,76,0,0.5);
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(255,76,0,0.6);
 }
 
 /* ===== Services Preview ===== */
@@ -135,16 +140,17 @@ body {
 
 .card {
     background: #fff;
-    padding: 35px 25px;
+    border-left: 5px solid #FF4C00;
+    padding: 40px 30px;
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.1);
     width: 300px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.4s, box-shadow 0.4s;
 }
 
 .card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.2);
 }
 
 .card h3 {
@@ -161,21 +167,23 @@ body {
 
 /* ===== Footer ===== */
 footer {
-    background-color: #222;
+    background: linear-gradient(90deg, #222, #444);
     color: #fff;
-    padding: 50px 50px;
+    padding: 60px 50px;
     text-align: center;
 }
 
 footer .socials a {
     color: #FF4C00;
-    margin: 0 12px;
+    margin: 0 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s, transform 0.3s;
+    transition: all 0.3s;
 }
 
 footer .socials a:hover {
     color: #fff;
-    transform: scale(1.1);
+    transform: scale(1.2);
+    text-shadow: 0 0 10px #FF4C00;
 }
