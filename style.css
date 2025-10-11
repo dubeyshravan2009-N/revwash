@@ -13,6 +13,35 @@ body {
   min-height: 100vh;
 }
 
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background: rgba(10, 31, 68, 0.9);
+  padding: 15px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.navbar ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+.navbar ul li a {
+  color: #FFC107;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.navbar ul li a:hover {
+  background: #FFC107;
+  color: #0A1F44;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
 /* Hero Section */
 .hero {
   display: flex;
@@ -43,18 +72,37 @@ body {
   display: block;
 }
 
-/* Hero Title & Subtitle */
-.hero-title {
+/* Hero Content */
+.hero-content h1 {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 15px;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
 }
-.hero-subtitle {
+.hero-content p {
   font-size: 1.4rem;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   max-width: 550px;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+/* Primary Hero Button */
+.primary-btn {
+  display: inline-block;
+  padding: 16px 35px;
+  background: linear-gradient(45deg, #FFC107, #FFB300);
+  color: #0A1F44;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.primary-btn:hover {
+  background: linear-gradient(45deg, #FFB300, #FFA000);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 /* Login Form */
@@ -64,6 +112,7 @@ body {
   gap: 20px;
   width: 100%;
   max-width: 420px;
+  margin-top: 50px;
 }
 .login-form input {
   padding: 16px;
@@ -75,7 +124,7 @@ body {
 .login-form input:focus {
   outline: 2px solid #FFC107;
 }
-.login-form button {
+.login-form button.btn {
   padding: 16px;
   border-radius: 12px;
   border: none;
@@ -86,7 +135,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-.login-form button:hover {
+.login-form button.btn:hover {
   background: #FFA000;
   transform: translateY(-2px);
 }
@@ -99,16 +148,8 @@ body {
 
 /* Responsive */
 @media screen and (max-width: 480px){
-  .hero-title {
-    font-size: 2rem;
-  }
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  .logo-container {
-    padding: 20px;
-  }
-  .logo {
-    width: 150px;
-  }
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content p { font-size: 1rem; }
+  .logo-container { padding: 20px; }
+  .logo { width: 150px; }
 }
