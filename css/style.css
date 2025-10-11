@@ -1,46 +1,53 @@
-/* Booking Hero Section */
-.booking-hero{
+/* ===== Hero Section for Booking ===== */
+.booking-hero {
   height:50vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#fff;
   background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
              url('https://via.placeholder.com/1920x600/007BFF/ffffff?text=Select+Your+Car+Brand') center/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+  animation:fadeIn 1.5s ease;
 }
 
-/* Car Brands */
-.car-brands{
+/* ===== Car Brands ===== */
+.car-brands {
   padding:60px 30px;
-  background:var(--light);
+  background:#f0f4f8;
 }
-.car-brands h2{
-  font-size:2rem;
-  margin-bottom:40px;
-}
-.brands-container{
+.brands-container {
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:25px;
 }
-.brand{
-  background:var(--white);
+.brand {
+  background:#fff;
   padding:20px;
   width:180px;
-  border-radius:var(--radius);
+  border-radius:12px;
   box-shadow:0 8px 25px rgba(0,0,0,0.1);
   cursor:pointer;
   transition:transform 0.3s, box-shadow 0.3s;
   text-align:center;
 }
-.brand:hover{
+.brand:hover {
   transform:translateY(-6px);
   box-shadow:0 12px 30px rgba(0,0,0,0.15);
 }
-.brand img{
+.brand img {
   width:100px;
   height:auto;
   margin-bottom:10px;
 }
-.brand p{
+.brand p {
   font-weight:600;
-  color:var(--dark);
+  color:#0b1d3a;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
 }
