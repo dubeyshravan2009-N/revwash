@@ -6,10 +6,9 @@
 <title>RevvWash - Car Models</title>
 <link rel="stylesheet" href="style.css">
 <style>
-/* ---------- Custom Styles for Models Page ---------- */
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #0d47a1; /* Bold automotive blue */
+    background-color: #0d47a1; /* Bold blue automotive theme */
     color: #fff;
     margin: 0;
     padding: 0;
@@ -58,36 +57,45 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
     padding: 20px;
 }
 
 /* Individual Model Card */
 .model-card {
     background: #071b3f;
-    width: 180px;
+    width: 160px;
     border-radius: 15px;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.model-card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.model-card h3 {
-    font-size: 1.1rem;
-    margin: 0;
-    color: #ff4c00;
-}
-
 .model-card:hover {
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+}
+
+.model-card h3 {
+    margin: 10px 0 0 0;
+    font-size: 1rem;
+    color: #ff4c00;
+}
+
+/* Placeholder Circle for Brand Initial */
+.model-card .placeholder {
+    width: 60px;
+    height: 60px;
+    background-color: #ff4c00;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #071b3f;
 }
 
 /* Footer */
@@ -114,101 +122,101 @@ footer {
 
 <div class="models-container">
 
-    <!-- Toyota -->
-    <div class="model-card"><img src="brands/models/toyota/corolla.png" alt="Toyota Corolla"><h3>Corolla</h3></div>
-    <div class="model-card"><img src="brands/models/toyota/fortuner.png" alt="Toyota Fortuner"><h3>Fortuner</h3></div>
-    <div class="model-card"><img src="brands/models/toyota/innova.png" alt="Toyota Innova"><h3>Innova Crysta</h3></div>
-    <div class="model-card"><img src="brands/models/toyota/urbancruiser.png" alt="Toyota Urban Cruiser"><h3>Urban Cruiser</h3></div>
-    <div class="model-card"><img src="brands/models/toyota/yaris.png" alt="Toyota Yaris"><h3>Yaris</h3></div>
-    <div class="model-card"><img src="brands/models/toyota/glanza.png" alt="Toyota Glanza"><h3>Glanza</h3></div>
-    <div class="model-card"><img src="brands/models/toyota/hilux.png" alt="Toyota Hilux"><h3>Hilux</h3></div>
-    <div class="model-card"><img src="brands/models/toyota/rush.png" alt="Toyota Rush"><h3>Rush</h3></div>
-    <div class="model-card"><img src="brands/models/toyota/etios.png" alt="Toyota Etios"><h3>Etios</h3></div>
-    <div class="model-card"><img src="brands/models/toyota/prius.png" alt="Toyota Prius"><h3>Prius</h3></div>
+<!-- Toyota -->
+<div class="model-card"><div class="placeholder">T</div><h3>Corolla</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Fortuner</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Innova</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Yaris</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Urban Cruiser</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Glanza</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Hilux</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Rush</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Etios</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Prius</h3></div>
 
-    <!-- Honda -->
-    <div class="model-card"><img src="brands/models/honda/city.png" alt="Honda City"><h3>City</h3></div>
-    <div class="model-card"><img src="brands/models/honda/civic.png" alt="Honda Civic"><h3>Civic</h3></div>
-    <div class="model-card"><img src="brands/models/honda/amaze.png" alt="Honda Amaze"><h3>Amaze</h3></div>
-    <div class="model-card"><img src="brands/models/honda/br-v.png" alt="Honda BR-V"><h3>BR-V</h3></div>
-    <div class="model-card"><img src="brands/models/honda/wr-v.png" alt="Honda WR-V"><h3>WR-V</h3></div>
-    <div class="model-card"><img src="brands/models/honda/hr-v.png" alt="Honda HR-V"><h3>HR-V</h3></div>
-    <div class="model-card"><img src="brands/models/honda/accord.png" alt="Honda Accord"><h3>Accord</h3></div>
-    <div class="model-card"><img src="brands/models/honda/ballade.png" alt="Honda Ballade"><h3>Ballade</h3></div>
-    <div class="model-card"><img src="brands/models/honda/brio.png" alt="Honda Brio"><h3>Brio</h3></div>
+<!-- Honda -->
+<div class="model-card"><div class="placeholder">H</div><h3>City</h3></div>
+<div class="model-card"><div class="placeholder">H</div><h3>Civic</h3></div>
+<div class="model-card"><div class="placeholder">H</div><h3>Amaze</h3></div>
+<div class="model-card"><div class="placeholder">H</div><h3>BR-V</h3></div>
+<div class="model-card"><div class="placeholder">H</div><h3>WR-V</h3></div>
+<div class="model-card"><div class="placeholder">H</div><h3>HR-V</h3></div>
+<div class="model-card"><div class="placeholder">H</div><h3>Accord</h3></div>
+<div class="model-card"><div class="placeholder">H</div><h3>Brio</h3></div>
+<div class="model-card"><div class="placeholder">H</div><h3>Ballade</h3></div>
 
-    <!-- Hyundai -->
-    <div class="model-card"><img src="brands/models/hyundai/creta.png" alt="Hyundai Creta"><h3>Creta</h3></div>
-    <div class="model-card"><img src="brands/models/hyundai/verna.png" alt="Hyundai Verna"><h3>Verna</h3></div>
-    <div class="model-card"><img src="brands/models/hyundai/venue.png" alt="Hyundai Venue"><h3>Venue</h3></div>
-    <div class="model-card"><img src="brands/models/hyundai/kona.png" alt="Hyundai Kona"><h3>Kona</h3></div>
-    <div class="model-card"><img src="brands/models/hyundai/i20.png" alt="Hyundai i20"><h3>i20</h3></div>
-    <div class="model-card"><img src="brands/models/hyundai/alex.png" alt="Hyundai Alcazar"><h3>Alcazar</h3></div>
-    <div class="model-card"><img src="brands/models/hyundai/tucson.png" alt="Hyundai Tucson"><h3>Tucson</h3></div>
-    <div class="model-card"><img src="brands/models/hyundai/santro.png" alt="Hyundai Santro"><h3>Santro</h3></div>
-    <div class="model-card"><img src="brands/models/hyundai/grand-i10.png" alt="Hyundai Grand i10"><h3>Grand i10</h3></div>
+<!-- Hyundai -->
+<div class="model-card"><div class="placeholder">Hy</div><h3>Creta</h3></div>
+<div class="model-card"><div class="placeholder">Hy</div><h3>Verna</h3></div>
+<div class="model-card"><div class="placeholder">Hy</div><h3>Venue</h3></div>
+<div class="model-card"><div class="placeholder">Hy</div><h3>Kona</h3></div>
+<div class="model-card"><div class="placeholder">Hy</div><h3>i20</h3></div>
+<div class="model-card"><div class="placeholder">Hy</div><h3>Alcazar</h3></div>
+<div class="model-card"><div class="placeholder">Hy</div><h3>Tucson</h3></div>
+<div class="model-card"><div class="placeholder">Hy</div><h3>Santro</h3></div>
+<div class="model-card"><div class="placeholder">Hy</div><h3>Grand i10</h3></div>
 
-    <!-- Maruti Suzuki -->
-    <div class="model-card"><img src="brands/models/maruti/alto.png" alt="Maruti Alto"><h3>Alto</h3></div>
-    <div class="model-card"><img src="brands/models/maruti/swift.png" alt="Maruti Swift"><h3>Swift</h3></div>
-    <div class="model-card"><img src="brands/models/maruti/baleno.png" alt="Maruti Baleno"><h3>Baleno</h3></div>
-    <div class="model-card"><img src="brands/models/maruti/ciaz.png" alt="Maruti Ciaz"><h3>Ciaz</h3></div>
-    <div class="model-card"><img src="brands/models/maruti/ertiga.png" alt="Maruti Ertiga"><h3>Ertiga</h3></div>
-    <div class="model-card"><img src="brands/models/maruti/s-cross.png" alt="Maruti S-Cross"><h3>S-Cross</h3></div>
-    <div class="model-card"><img src="brands/models/maruti/vitara-brezza.png" alt="Maruti Vitara Brezza"><h3>Vitara Brezza</h3></div>
-    <div class="model-card"><img src="brands/models/maruti/eeco.png" alt="Maruti Eeco"><h3>Eeco</h3></div>
-    <div class="model-card"><img src="brands/models/maruti/omni.png" alt="Maruti Omni"><h3>Omni</h3></div>
-    <div class="model-card"><img src="brands/models/maruti/gypsy.png" alt="Maruti Gypsy"><h3>Gypsy</h3></div>
+<!-- Maruti Suzuki -->
+<div class="model-card"><div class="placeholder">MS</div><h3>Swift</h3></div>
+<div class="model-card"><div class="placeholder">MS</div><h3>Alto</h3></div>
+<div class="model-card"><div class="placeholder">MS</div><h3>Baleno</h3></div>
+<div class="model-card"><div class="placeholder">MS</div><h3>Ciaz</h3></div>
+<div class="model-card"><div class="placeholder">MS</div><h3>Ertiga</h3></div>
+<div class="model-card"><div class="placeholder">MS</div><h3>S-Cross</h3></div>
+<div class="model-card"><div class="placeholder">MS</div><h3>Vitara Brezza</h3></div>
+<div class="model-card"><div class="placeholder">MS</div><h3>Eeco</h3></div>
+<div class="model-card"><div class="placeholder">MS</div><h3>Omni</h3></div>
+<div class="model-card"><div class="placeholder">MS</div><h3>Gypsy</h3></div>
 
-    <!-- BMW -->
-    <div class="model-card"><img src="brands/models/bmw/3series.png" alt="BMW 3 Series"><h3>3 Series</h3></div>
-    <div class="model-card"><img src="brands/models/bmw/5series.png" alt="BMW 5 Series"><h3>5 Series</h3></div>
-    <div class="model-card"><img src="brands/models/bmw/7series.png" alt="BMW 7 Series"><h3>7 Series</h3></div>
-    <div class="model-card"><img src="brands/models/bmw/x1.png" alt="BMW X1"><h3>X1</h3></div>
-    <div class="model-card"><img src="brands/models/bmw/x3.png" alt="BMW X3"><h3>X3</h3></div>
-    <div class="model-card"><img src="brands/models/bmw/x5.png" alt="BMW X5"><h3>X5</h3></div>
-    <div class="model-card"><img src="brands/models/bmw/z4.png" alt="BMW Z4"><h3>Z4</h3></div>
-    <div class="model-card"><img src="brands/models/bmw/i4.png" alt="BMW i4"><h3>i4</h3></div>
-    <div class="model-card"><img src="brands/models/bmw/iX.png" alt="BMW iX"><h3>iX</h3></div>
+<!-- BMW -->
+<div class="model-card"><div class="placeholder">B</div><h3>3 Series</h3></div>
+<div class="model-card"><div class="placeholder">B</div><h3>5 Series</h3></div>
+<div class="model-card"><div class="placeholder">B</div><h3>7 Series</h3></div>
+<div class="model-card"><div class="placeholder">B</div><h3>X1</h3></div>
+<div class="model-card"><div class="placeholder">B</div><h3>X3</h3></div>
+<div class="model-card"><div class="placeholder">B</div><h3>X5</h3></div>
+<div class="model-card"><div class="placeholder">B</div><h3>Z4</h3></div>
+<div class="model-card"><div class="placeholder">B</div><h3>i4</h3></div>
+<div class="model-card"><div class="placeholder">B</div><h3>iX</h3></div>
 
-    <!-- Mercedes -->
-    <div class="model-card"><img src="brands/models/mercedes/a-class.png" alt="Mercedes A-Class"><h3>A-Class</h3></div>
-    <div class="model-card"><img src="brands/models/mercedes/c-class.png" alt="Mercedes C-Class"><h3>C-Class</h3></div>
-    <div class="model-card"><img src="brands/models/mercedes/e-class.png" alt="Mercedes E-Class"><h3>E-Class</h3></div>
-    <div class="model-card"><img src="brands/models/mercedes/s-class.png" alt="Mercedes S-Class"><h3>S-Class</h3></div>
-    <div class="model-card"><img src="brands/models/mercedes/gle.png" alt="Mercedes GLE"><h3>GLE</h3></div>
-    <div class="model-card"><img src="brands/models/mercedes/glc.png" alt="Mercedes GLC"><h3>GLC</h3></div>
-    <div class="model-card"><img src="brands/models/mercedes/glb.png" alt="Mercedes GLB"><h3>GLB</h3></div>
-    <div class="model-card"><img src="brands/models/mercedes/cla.png" alt="Mercedes CLA"><h3>CLA</h3></div>
+<!-- Mercedes -->
+<div class="model-card"><div class="placeholder">M</div><h3>A-Class</h3></div>
+<div class="model-card"><div class="placeholder">M</div><h3>C-Class</h3></div>
+<div class="model-card"><div class="placeholder">M</div><h3>E-Class</h3></div>
+<div class="model-card"><div class="placeholder">M</div><h3>S-Class</h3></div>
+<div class="model-card"><div class="placeholder">M</div><h3>GLE</h3></div>
+<div class="model-card"><div class="placeholder">M</div><h3>GLC</h3></div>
+<div class="model-card"><div class="placeholder">M</div><h3>GLB</h3></div>
+<div class="model-card"><div class="placeholder">M</div><h3>CLA</h3></div>
 
-    <!-- Mahindra -->
-    <div class="model-card"><img src="brands/models/mahindra/scorpio.png" alt="Mahindra Scorpio"><h3>Scorpio</h3></div>
-    <div class="model-card"><img src="brands/models/mahindra/xuv500.png" alt="Mahindra XUV500"><h3>XUV500</h3></div>
-    <div class="model-card"><img src="brands/models/mahindra/thar.png" alt="Mahindra Thar"><h3>Thar</h3></div>
-    <div class="model-card"><img src="brands/models/mahindra/bolero.png" alt="Mahindra Bolero"><h3>Bolero</h3></div>
-    <div class="model-card"><img src="brands/models/mahindra/alturas.png" alt="Mahindra Alturas G4"><h3>Alturas G4</h3></div>
-    <div class="model-card"><img src="brands/models/mahindra/xylo.png" alt="Mahindra Xylo"><h3>Xylo</h3></div>
+<!-- Mahindra -->
+<div class="model-card"><div class="placeholder">Ma</div><h3>Scorpio</h3></div>
+<div class="model-card"><div class="placeholder">Ma</div><h3>XUV500</h3></div>
+<div class="model-card"><div class="placeholder">Ma</div><h3>Thar</h3></div>
+<div class="model-card"><div class="placeholder">Ma</div><h3>Bolero</h3></div>
+<div class="model-card"><div class="placeholder">Ma</div><h3>Alturas G4</h3></div>
+<div class="model-card"><div class="placeholder">Ma</div><h3>Xylo</h3></div>
 
-    <!-- Nissan -->
-    <div class="model-card"><img src="brands/models/nissan/magnite.png" alt="Nissan Magnite"><h3>Magnite</h3></div>
-    <div class="model-card"><img src="brands/models/nissan/kicks.png" alt="Nissan Kicks"><h3>Kicks</h3></div>
-    <div class="model-card"><img src="brands/models/nissan/terra.png" alt="Nissan Terra"><h3>Terra</h3></div>
-    <div class="model-card"><img src="brands/models/nissan/gt-r.png" alt="Nissan GT-R"><h3>GT-R</h3></div>
+<!-- Nissan -->
+<div class="model-card"><div class="placeholder">N</div><h3>Magnite</h3></div>
+<div class="model-card"><div class="placeholder">N</div><h3>Kicks</h3></div>
+<div class="model-card"><div class="placeholder">N</div><h3>Terra</h3></div>
+<div class="model-card"><div class="placeholder">N</div><h3>GT-R</h3></div>
 
-    <!-- Tata -->
-    <div class="model-card"><img src="brands/models/tata/nexon.png" alt="Tata Nexon"><h3>Nexon</h3></div>
-    <div class="model-card"><img src="brands/models/tata/harrier.png" alt="Tata Harrier"><h3>Harrier</h3></div>
-    <div class="model-card"><img src="brands/models/tata/tigor.png" alt="Tata Tigor"><h3>Tigor</h3></div>
-    <div class="model-card"><img src="brands/models/tata/altroz.png" alt="Tata Altroz"><h3>Altroz</h3></div>
-    <div class="model-card"><img src="brands/models/tata/punch.png" alt="Tata Punch"><h3>Punch</h3></div>
-    <div class="model-card"><img src="brands/models/tata/safari.png" alt="Tata Safari"><h3>Safari</h3></div>
+<!-- Tata -->
+<div class="model-card"><div class="placeholder">T</div><h3>Nexon</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Harrier</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Tigor</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Altroz</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Punch</h3></div>
+<div class="model-card"><div class="placeholder">T</div><h3>Safari</h3></div>
 
-    <!-- Renault -->
-    <div class="model-card"><img src="brands/models/renault/kwid.png" alt="Renault Kwid"><h3>Kwid</h3></div>
-    <div class="model-card"><img src="brands/models/renault/duster.png" alt="Renault Duster"><h3>Duster</h3></div>
-    <div class="model-card"><img src="brands/models/renault/captur.png" alt="Renault Captur"><h3>Captur</h3></div>
-    <div class="model-card"><img src="brands/models/renault/kiger.png" alt="Renault Kiger"><h3>Kiger</h3></div>
-    <div class="model-card"><img src="brands/models/renault/triber.png" alt="Renault Triber"><h3>Triber</h3></div>
+<!-- Renault -->
+<div class="model-card"><div class="placeholder">R</div><h3>Kwid</h3></div>
+<div class="model-card"><div class="placeholder">R</div><h3>Duster</h3></div>
+<div class="model-card"><div class="placeholder">R</div><h3>Captur</h3></div>
+<div class="model-card"><div class="placeholder">R</div><h3>Kiger</h3></div>
+<div class="model-card"><div class="placeholder">R</div><h3>Triber</h3></div>
 
 </div>
 
