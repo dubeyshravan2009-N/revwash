@@ -1,4 +1,4 @@
-/* Global Styles */
+/* ===== Global Styles ===== */
 * {
     margin: 0;
     padding: 0;
@@ -9,37 +9,58 @@
 body {
     color: #222;
     background-color: #fff;
+    line-height: 1.6;
 }
 
-/* Navbar */
+/* ===== Navbar ===== */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 15px 50px;
     background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: background 0.3s, padding 0.3s;
 }
 
 .navbar .logo img {
-    height: 50px;
+    height: 40px; /* Shorter logo */
     width: auto;
+    transition: height 0.3s;
 }
 
 .navbar nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .navbar nav ul li a {
     text-decoration: none;
     color: #222;
     font-weight: 600;
+    font-size: 1rem;
+    position: relative;
     transition: color 0.3s;
+}
+
+.navbar nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: #FF4C00;
+    transition: width 0.3s;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+.navbar nav ul li a:hover::after,
+.navbar nav ul li a.active::after {
+    width: 100%;
 }
 
 .navbar nav ul li a:hover,
@@ -47,53 +68,64 @@ body {
     color: #FF4C00;
 }
 
-/* Hero Section */
+/* ===== Hero Section ===== */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../images/hero-bg.jpg') no-repeat center center/cover;
     height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
+    padding: 0 20px;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
     margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
 .btn-primary {
     background-color: #FF4C00;
     color: #fff;
-    padding: 15px 30px;
-    border-radius: 30px;
+    padding: 15px 35px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 5px 15px rgba(255,76,0,0.4);
     transition: all 0.3s;
 }
 
 .btn-primary:hover {
     background-color: #e04300;
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(255,76,0,0.5);
 }
 
-/* Services Preview */
+/* ===== Services Preview ===== */
 .services-preview {
-    padding: 80px 50px;
-    background-color: #f9f9f9;
+    padding: 100px 50px;
+    background-color: #f8f8f8;
 }
 
 .services-preview h2 {
     text-align: center;
-    margin-bottom: 50px;
-    font-size: 2.5rem;
+    margin-bottom: 60px;
+    font-size: 2.8rem;
     color: #222;
+    font-weight: 700;
 }
 
 .service-cards {
@@ -105,38 +137,47 @@ body {
 
 .card {
     background: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    padding: 35px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     width: 300px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
 .card h3 {
-    margin-bottom: 15px;
+    margin-bottom: 18px;
     color: #FF4C00;
+    font-size: 1.3rem;
+    font-weight: 700;
 }
 
-/* Footer */
+.card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ===== Footer ===== */
 footer {
     background-color: #222;
     color: #fff;
-    padding: 40px 50px;
+    padding: 50px 50px;
     text-align: center;
 }
 
 footer .socials a {
     color: #FF4C00;
-    margin: 0 10px;
+    margin: 0 12px;
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: color 0.3s, transform 0.3s;
 }
 
 footer .socials a:hover {
     color: #fff;
+    transform: scale(1.1);
 }
