@@ -1,25 +1,42 @@
-/* Brands/Models/Packages */
-.brands-container, .models-container, .packages-container {
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-    justify-content:center;
-    margin-top:20px;
+/* Global */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif; }
+body { background:#e6f0ff; color:#222; }
+
+/* Navbar */
+.navbar {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:15px 50px; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    position:sticky; top:0; z-index:100;
+}
+.navbar .logo img { height:50px; width:auto; }
+.navbar ul { list-style:none; display:flex; gap:25px; }
+.navbar ul li a { text-decoration:none; color:#222; font-weight:600; transition:0.3s; }
+.navbar ul li a:hover, .navbar ul li a.active { color:#0077cc; }
+
+/* Hero */
+.hero { background:#0077cc; color:white; text-align:center; padding:80px 20px; }
+.hero h1 { font-size:3rem; margin-bottom:20px; }
+.hero p { font-size:1.2rem; margin-bottom:30px; }
+.btn-primary { background:#005fa3; color:white; padding:15px 30px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s; }
+.btn-primary:hover { background:#003f73; transform:scale(1.05); }
+
+/* Sections */
+.services-preview, .car-brands, .car-models, .packages {
+    padding:60px 20px; text-align:center;
+}
+h2 { margin-bottom:40px; color:#0077cc; font-size:2.2rem; }
+
+/* Cards */
+.brand, .models-container .card, .packages-container .card, .service-cards .card {
+    background:white; color:#222; padding:20px; border-radius:15px;
+    width:180px; text-align:center; font-weight:600; cursor:pointer; box-shadow:0 8px 20px rgba(0,0,0,0.1); transition:0.3s;
+    display:inline-block; margin:10px;
+}
+.brand:hover, .models-container .card:hover, .packages-container .card:hover, .service-cards .card:hover {
+    transform:translateY(-8px); box-shadow:0 12px 25px rgba(0,0,0,0.2);
 }
 
-.brand, .models-container .card, .packages-container .card {
-    background:#0077cc;
-    color:white;
-    padding:20px;
-    border-radius:15px;
-    width:150px;
-    text-align:center;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.brand:hover, .models-container .card:hover, .packages-container .card:hover {
-    transform:translateY(-8px);
-    background:#005fa3;
-}
+/* Footer */
+footer { background:#222; color:white; padding:40px 20px; text-align:center; }
+footer .socials a { color:#0077cc; margin:0 10px; text-decoration:none; transition:0.3s; }
+footer .socials a:hover { color:white; }
