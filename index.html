@@ -1,4 +1,26 @@
 <!DOCTYPE html>
+<!-- Registration & Login Modal -->
+<div id="authModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9999; justify-content:center; align-items:center;">
+  <div style="background:white; padding:30px; border-radius:15px; width:350px; position:relative;">
+    <h2>Create Account</h2>
+    <input id="regName" placeholder="Full Name" style="width:100%; margin:5px 0;" required>
+    <input id="regEmail" placeholder="Email" style="width:100%; margin:5px 0;" required>
+    <input id="regPhone" placeholder="Mobile" style="width:100%; margin:5px 0;" required>
+    <input id="regAddress" placeholder="Address" style="width:100%; margin:5px 0;">
+    <input id="regPassword" type="password" placeholder="Password" style="width:100%; margin:5px 0;" required>
+    <button id="registerBtn" style="width:100%; margin-top:10px; padding:10px; background:#0077cc; color:white; border:none; border-radius:10px;">Register</button>
+
+    <hr>
+
+    <h2>Login</h2>
+    <input id="loginEmail" placeholder="Email" style="width:100%; margin:5px 0;">
+    <input id="loginPassword" type="password" placeholder="Password" style="width:100%; margin:5px 0;">
+    <button id="loginBtn" style="width:100%; margin-top:10px; padding:10px; background:#0077cc; color:white; border:none; border-radius:10px;">Login</button>
+
+    <span id="closeModal" style="position:absolute; top:10px; right:15px; cursor:pointer; font-weight:bold;">×</span>
+  </div>
+</div>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
