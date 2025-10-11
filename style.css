@@ -8,7 +8,7 @@
 
 body {
     color: #222;
-    line-height: 1.6;
+    background-color: #fff;
 }
 
 /* Navbar */
@@ -17,13 +17,16 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #fff; /* Can match logo theme */
+    background-color: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .navbar .logo img {
-    height: 50px;      /* Adjust to 40px if needed */
-    width: auto;       /* Keep aspect ratio */
+    height: 50px;
+    width: auto;
 }
 
 .navbar nav ul {
@@ -41,7 +44,7 @@ body {
 
 .navbar nav ul li a:hover,
 .navbar nav ul li a.active {
-    color: #FF4C00; /* Accent color from logo */
+    color: #FF4C00;
 }
 
 /* Hero Section */
@@ -66,7 +69,7 @@ body {
 }
 
 .btn-primary {
-    background-color: #FF4C00; /* Logo accent */
+    background-color: #FF4C00;
     color: #fff;
     padding: 15px 30px;
     border-radius: 30px;
