@@ -20,60 +20,95 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
   min-height: 100vh;
+  animation: fadeIn 1.2s ease-in;
 }
 
 /* Logo */
 .logo-container {
   background: white;
-  padding: 20px;
+  padding: 25px;
   border-radius: 50%;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.logo-container:hover {
+  transform: scale(1.05);
 }
 .logo {
-  width: 180px;
+  width: 200px;
   height: auto;
   display: block;
 }
 
 /* Hero Title & Subtitle */
 .hero-title {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 15px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
 }
 .hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  max-width: 500px;
+  font-size: 1.4rem;
+  margin-bottom: 50px;
+  max-width: 550px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
 
 /* Login Form */
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
 }
 .login-form input {
-  padding: 15px;
-  border-radius: 10px;
+  padding: 16px;
+  border-radius: 12px;
   border: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+.login-form input:focus {
+  outline: 2px solid #FFC107;
 }
 .login-form button {
-  padding: 15px;
-  border-radius: 10px;
+  padding: 16px;
+  border-radius: 12px;
   border: none;
   background: #FFC107;
   color: #0A1F44;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
 }
 .login-form button:hover {
   background: #FFA000;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media screen and (max-width: 480px){
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .logo-container {
+    padding: 20px;
+  }
+  .logo {
+    width: 150px;
+  }
 }
