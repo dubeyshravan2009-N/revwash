@@ -4,25 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RevvWash - Select Car Model</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-  <img src="logo.png" alt="RevvWash Logo" class="logo">
-  <nav>
-    <a href="home.html">Home</a>
-    <a href="booking.html">Back</a>
-  </nav>
-</header>
+  <!-- Navbar -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="RevvWash Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="booking.html" class="active">Back</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<section class="car-models">
-  <h2>Select Your Car Model</h2>
-  <div class="models-container" id="modelsContainer">
-    <!-- Models with images will be loaded here dynamically -->
-  </div>
-</section>
+  <!-- Car Models Section -->
+  <section class="services-preview models-section">
+    <div class="container">
+      <h2>Select Your Car Model</h2>
+      <div class="service-cards models-container" id="modelsContainer">
+        <!-- Models with images will be loaded dynamically -->
+      </div>
+    </div>
+  </section>
 
-<script src="script.js"></script>
+  <!-- Footer -->
+  <footer>
+    <div class="container footer">
+      <p>&copy; 2025 RevvWash. All Rights Reserved.</p>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
