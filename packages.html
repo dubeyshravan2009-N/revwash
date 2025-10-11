@@ -4,25 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RevvWash - Select Package</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-  <img src="logo.png" alt="RevvWash Logo" class="logo">
-  <nav>
-    <a href="home.html">Home</a>
-    <a href="models.html">Back</a>
-  </nav>
-</header>
+  <!-- Navbar -->
+  <header>
+    <div class="container navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="RevvWash Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="models.html" class="active">Back</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<section class="packages">
-  <h2>Select a Wash Package</h2>
-  <div class="packages-container" id="packagesContainer">
-    <!-- Packages will load dynamically -->
-  </div>
-</section>
+  <!-- Packages Section -->
+  <section class="services-preview packages-section">
+    <div class="container">
+      <h2>Select a Wash Package</h2>
+      <div class="service-cards" id="packagesContainer">
+        <!-- Packages load dynamically -->
+      </div>
+    </div>
+  </section>
 
-<script src="script.js"></script>
+  <!-- Footer -->
+  <footer>
+    <div class="container footer">
+      <p>&copy; 2025 RevvWash. All Rights Reserved.</p>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
