@@ -1,50 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RevvWash - Select Car Model</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RevvWash - Select Car Model</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header>
-    <div class="container navbar">
-      <div class="logo">
-        <img src="images/logo.png" alt="RevvWash Logo">
-      </div>
-      <nav>
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="booking.html" class="active">Back</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header class="navbar">
+  <div class="logo"><img src="images/logo.png" alt="RevvWash Logo"></div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="booking.html">Book Wash</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Car Models Section -->
-  <section class="services-preview models-section">
-    <div class="container">
-      <h2>Select Your Car Model</h2>
-      <div class="service-cards models-container" id="modelsContainer">
-        <!-- Models with images will be loaded dynamically -->
-      </div>
-    </div>
-  </section>
+<section class="hero booking-hero">
+  <div class="hero-content">
+    <h1>Select Your Car Model</h1>
+    <p>Choose your car model to proceed with your booking.</p>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container footer">
-      <p>&copy; 2025 RevvWash. All Rights Reserved.</p>
-      <div class="socials">
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">WhatsApp</a>
-      </div>
-    </div>
-  </footer>
+<section class="car-models">
+  <div class="models-container" id="modelsContainer">
+    <!-- Toyota Models -->
+    <div class="model-card"><img src="brands/models/toyota/corolla.png" alt="Toyota Corolla"><h3>Corolla</h3></div>
+    <div class="model-card"><img src="brands/models/toyota/fortuner.png" alt="Toyota Fortuner"><h3>Fortuner</h3></div>
+    <div class="model-card"><img src="brands/models/toyota/innova.png" alt="Toyota Innova"><h3>Innova</h3></div>
 
-  <script src="script.js"></script>
+    <!-- Honda Models -->
+    <div class="model-card"><img src="brands/models/honda/civic.png" alt="Honda Civic"><h3>Civic</h3></div>
+    <div class="model-card"><img src="brands/models/honda/city.png" alt="Honda City"><h3>City</h3></div>
+    <div class="model-card"><img src="brands/models/honda/amaze.png" alt="Honda Amaze"><h3>Amaze</h3></div>
+
+    <!-- Hyundai Models -->
+    <div class="model-card"><img src="brands/models/hyundai/creta.png" alt="Hyundai Creta"><h3>Creta</h3></div>
+    <div class="model-card"><img src="brands/models/hyundai/verna.png" alt="Hyundai Verna"><h3>Verna</h3></div>
+    <div class="model-card"><img src="brands/models/hyundai/venue.png" alt="Hyundai Venue"><h3>Venue</h3></div>
+
+    <!-- Maruti Suzuki Models -->
+    <div class="model-card"><img src="brands/models/maruti/alto.png" alt="Maruti Alto"><h3>Alto</h3></div>
+    <div class="model-card"><img src="brands/models/maruti/swift.png" alt="Maruti Swift"><h3>Swift</h3></div>
+    <div class="model-card"><img src="brands/models/maruti/baleno.png" alt="Maruti Baleno"><h3>Baleno</h3></div>
+
+    <!-- BMW Models -->
+    <div class="model-card"><img src="brands/models/bmw/3series.png" alt="BMW 3 Series"><h3>3 Series</h3></div>
+    <div class="model-card"><img src="brands/models/bmw/5series.png" alt="BMW 5 Series"><h3>5 Series</h3></div>
+
+    <!-- Mercedes Models -->
+    <div class="model-card"><img src="brands/models/mercedes/cclass.png" alt="Mercedes C-Class"><h3>C-Class</h3></div>
+    <div class="model-card"><img src="brands/models/mercedes/eclass.png" alt="Mercedes E-Class"><h3>E-Class</h3></div>
+
+    <!-- Mahindra Models -->
+    <div class="model-card"><img src="brands/models/mahindra/scorpio.png" alt="Mahindra Scorpio"><h3>Scorpio</h3></div>
+    <div class="model-card"><img src="brands/models/mahindra/xuv500.png" alt="Mahindra XUV500"><h3>XUV500</h3></div>
+
+    <!-- Nissan Models -->
+    <div class="model-card"><img src="brands/models/nissan/magnite.png" alt="Nissan Magnite"><h3>Magnite</h3></div>
+
+    <!-- Tata Models -->
+    <div class="model-card"><img src="brands/models/tata/harrier.png" alt="Tata Harrier"><h3>Harrier</h3></div>
+    <div class="model-card"><img src="brands/models/tata/nexon.png" alt="Tata Nexon"><h3>Nexon</h3></div>
+
+    <!-- Renault Models -->
+    <div class="model-card"><img src="brands/models/renault/kwid.png" alt="Renault Kwid"><h3>Kwid</h3></div>
+    <div class="model-card"><img src="brands/models/renault/duster.png" alt="Renault Duster"><h3>Duster</h3></div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 RevvWash | All Rights Reserved</p>
+  <div class="socials">
+    <a href="#">Instagram</a>
+    <a href="#">Facebook</a>
+    <a href="#">WhatsApp</a>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
