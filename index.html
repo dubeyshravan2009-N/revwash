@@ -1,44 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RevvWash</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevvWash | Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Navbar -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="RevvWash Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Book Your Wash</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<!-- Navigation Bar -->
-<nav class="navbar">
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Book Now</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-</nav>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium Car Wash at Your Doorstep</h1>
+            <p>Fast, professional, and convenient. Book your car wash in seconds!</p>
+            <a href="services.html" class="btn-primary">Book Now</a>
+        </div>
+    </section>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="logo-container">
-    <img src="images/logo.png" alt="RevvWash Logo" class="logo">
-  </div>
-  <div class="hero-content">
-    <h1>Your Car. Our Care. Anytime. Anywhere.</h1>
-    <p>On-demand doorstep car wash service for modern India.</p>
-    <a href="#" class="primary-btn">Book Your Wash</a>
-  </div>
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>Exterior Wash</h3>
+                    <p>Shine your car like new with our expert exterior cleaning service.</p>
+                </div>
+                <div class="card">
+                    <h3>Interior Detailing</h3>
+                    <p>Deep clean your car’s interior for a fresh and hygienic ride.</p>
+                </div>
+                <div class="card">
+                    <h3>Full Detailing</h3>
+                    <p>Complete car care package including interior & exterior detailing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Sign-up / Login Form -->
-  <form id="loginForm" class="login-form">
-    <input type="text" id="username" placeholder="Full Name" required>
-    <input type="tel" id="mobile" placeholder="Mobile Number" required>
-    <input type="text" id="address" placeholder="Full Address" required>
-    <input type="text" id="pincode" placeholder="Pin Code" required>
-    <button type="submit" class="btn">Sign Up / Sign In</button>
-  </form>
-</section>
+    <!-- Footer -->
+    <footer>
+        <div class="container footer">
+            <p>&copy; 2025 RevvWash. All Rights Reserved.</p>
+            <div class="socials">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
