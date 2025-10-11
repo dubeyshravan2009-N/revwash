@@ -1,146 +1,65 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+/* ===== Base ===== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
+:root{
+  --blue:#007BFF;
+  --dark:#0b1d3a;
+  --light:#f7f9fc;
+  --white:#fff;
+  --radius:12px;
 }
 
-:root {
-  --blue: #007BFF;
-  --dark: #0b1d3a;
-  --light: #f8f9fa;
-  --text: #222;
-}
+/* Body */
+body{background:var(--light);color:var(--dark);}
 
 /* Navbar */
-.navbar {
-  background-color: #fff;
-  padding: 20px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.navbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:20px 50px;background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  position:sticky;top:0;z-index:100;
 }
+.navbar .logo img{height:50px}
+.navbar ul{display:flex;gap:30px;list-style:none}
+.navbar ul li a{text-decoration:none;color:var(--dark);font-weight:600;transition:0.3s}
+.navbar ul li a:hover,.navbar ul li a.active{color:var(--blue)}
 
-.navbar .logo img {
-  height: 55px;
-  width: auto;
+/* Hero */
+.hero{
+  height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+             url('https://via.placeholder.com/1920x900/007BFF/ffffff?text=RevvWash+Hero') center/cover no-repeat;
+  color:#fff;animation:fadeIn 1.5s ease;
 }
+.hero-content h1{font-size:3rem;margin-bottom:20px;animation:slideUp 1s ease forwards;}
+.hero-content p{font-size:1.2rem;margin-bottom:30px;animation:slideUp 1.2s ease forwards;}
+.btn-primary{background:var(--blue);color:#fff;padding:14px 35px;border-radius:40px;font-weight:600;text-decoration:none;transition:0.3s;}
+.btn-primary:hover{background:#0056d2;transform:scale(1.05);}
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
+/* Features */
+.features{padding:80px 50px;text-align:center;background:var(--white);}
+.features h2{font-size:2.5rem;margin-bottom:40px;}
+.feature-grid{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;}
+.feature-grid .card{background:var(--white);padding:25px;border-radius:var(--radius);
+box-shadow:0 8px 25px rgba(0,0,0,0.1);width:300px;transition:transform 0.3s,box-shadow 0.3s;}
+.feature-grid .card:hover{transform:translateY(-10px);box-shadow:0 12px 30px rgba(0,0,0,0.15);}
 
-.navbar ul li a {
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.navbar ul li a:hover,
-.navbar ul li a.active {
-  color: var(--blue);
-}
-
-/* Hero Section */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)),
-              url('https://via.placeholder.com/1920x900/007BFF/ffffff?text=RevvWash+Hero') no-repeat center/cover;
-  color: #fff;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
-
-.btn-primary {
-  background-color: var(--blue);
-  color: #fff;
-  padding: 14px 35px;
-  border-radius: 40px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  background-color: #0056d2;
-  transform: scale(1.05);
-}
-
-/* Services */
-.services {
-  padding: 80px 60px;
-  background-color: var(--light);
-  text-align: center;
-}
-
-.services h2 {
-  font-size: 2.5rem;
-  color: var(--dark);
-  margin-bottom: 40px;
-}
-
-.service-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.card {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  width: 300px;
-  padding: 30px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.card h3 {
-  color: var(--blue);
-  margin-bottom: 10px;
-}
+/* About Shravan */
+.about-shravan{padding:80px 50px;background:#f0f4f8;text-align:center;}
+.about-shravan h2{font-size:2.5rem;margin-bottom:20px;}
+.about-shravan p{font-size:1rem;max-width:800px;margin:0 auto 40px;}
+.about-grid{display:flex;flex-wrap:wrap;gap:25px;justify-content:center;}
+.about-grid .card{background:var(--white);padding:25px;border-radius:var(--radius);width:280px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);transition:transform 0.3s;}
+.about-grid .card:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(0,0,0,0.15);}
 
 /* Footer */
-footer {
-  background: var(--dark);
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
-}
+footer{padding:40px 50px;background:var(--dark);color:#fff;text-align:center;}
+footer .socials a{color:var(--blue);margin:0 10px;text-decoration:none;font-weight:600;transition:0.3s;}
+footer .socials a:hover{color:#fff}
 
-footer .socials a {
-  color: var(--blue);
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
+/* Floating buttons */
+.floating-book{position:fixed;right:20px;bottom:90px;background:var(--blue);color:#fff;padding:12px 18px;border-radius:50px;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(0,123,255,0.2);z-index:60;}
+.floating-whatsapp{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;padding:12px 18px;border-radius:50px;font-weight:700;text-decoration:none;box-shadow:0 10px 30px rgba(37,211,102,0.2);z-index:60;}
 
-footer .socials a:hover {
-  color: #fff;
-}
+/* Animations */
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes slideUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
