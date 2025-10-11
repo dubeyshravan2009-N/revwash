@@ -1,7 +1,4 @@
-// Welcome Note hide after 3 seconds
-setTimeout(()=>document.getElementById('welcomeNote').style.display='none', 3000);
-
-// Car Models for booking page
+// Car Models
 const models = {
     "Toyota":["Corolla","Camry","Fortuner","Innova","Yaris"],
     "Honda":["City","Civic","Jazz","CR-V","WR-V"],
