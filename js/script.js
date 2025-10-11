@@ -122,3 +122,13 @@ window.addEventListener('load', ()=>{
   initWhatsApp();
   document.querySelectorAll('#year,#year2,#year3,#year4,#year5,#year6').forEach(el => el.textContent = new Date().getFullYear());
 });
+// Block right-click
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Block DevTools shortcuts
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey && (e.key==='u'||e.key==='U')) || e.key==='F12' || (e.ctrlKey && e.shiftKey && (e.key==='I'||e.key==='J'))) {
+    e.preventDefault();
+  }
+});
+
