@@ -1,41 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>RevvWash - Payment</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .fade-in { animation: fadeIn 0.5s ease forwards; opacity: 0; }
-    @keyframes fadeIn { to { opacity: 1; } }
-
-    .btn-primary { cursor: pointer; transition: transform 0.3s; }
-    .btn-primary:hover { transform: scale(1.05); }
+    .fade-in { animation: revvFadeIn .45s ease both; }
+    @keyframes revvFadeIn { from { opacity: 0; transform: translateY(6px);} to { opacity:1; transform: translateY(0);} }
+    .btn-primary { cursor:pointer; transition: transform .18s; }
+    .btn-primary:hover { transform: translateY(-4px) scale(1.02); }
+    .details { margin-bottom: 12px; color:#444; }
+    .muted { color:#666; font-size:0.95rem; }
   </style>
 </head>
 <body>
 
 <header class="navbar">
-  <div class="logo">
-    <img src="images/logo.png" alt="RevvWash Logo">
-  </div>
+  <div class="logo"><img src="images/logo.png" alt="RevvWash logo"></div>
 </header>
 
 <section class="services-preview fade-in">
-  <h2>Payment</h2>
-  <p>This is a placeholder payment page. You can choose "Pay on Wash" or continue for future payment integration.</p>
-  <button class="btn-primary" id="payBtn">Pay on Wash / Continue</button>
+  <h2>Payment (Sample)</h2>
+
+  <div class="details">
+    <p>Brand: <strong id="pBrand">—</strong></p>
+    <p>Model: <strong id="pModel">—</strong></p>
+    <p>Wash Type: <strong id="pWash">—</strong></p>
+  </div>
+
+  <div class="service-cards">
+    <div class="card btn-primary" id="payNowBtn">Pay Now (Placeholder)</div>
+    <div class="card btn-primary" id="payLaterBtn">Pay on Wash</div>
+  </div>
+
+  <p class="muted" style="margin-top:14px;">Note: "Pay Now" is a placeholder. Payment integration will be added later.</p>
 </section>
 
 <footer>
   <p>© 2025 RevvWash. All Rights Reserved.</p>
 </footer>
 
+<script src="script.js"></script>
 <script>
-  document.getElementById('payBtn').addEventListener('click', () => {
-    window.location.href = 'thankYou.html';
-  });
-</script>
+  (function(){
+    const brand = localStorage.getItem('selectedBrand') || '—';
+    const model = localStorage.getItem('selectedModel') || '—';
+    const wash = localStorage.getItem('selectedWash') || '—';
 
+    document.getElementById('pBrand').innerText = brand;
+    document.getElementById('pModel').innerText = model;
+    document.getElementById('pWash').innerText = wash;
+
+    // clicking either button just records booking summary and shows thank you
+    function finalizeBooking(paymentMode) {
+      // build a simple booking object and save locally (for demo)
+      const booking = {
+        time: (new Date()).toISOString(),
+        brand, model, wash, paymentMode
+      };
+      // store last booking
+      localStorage.setItem('lastBooking', JSON.stringify(booking));
+      // goto thank you
+      window.location.href = 'thankYou.html';
+    }
+
+    document.getElementById('payNowBtn').addEventListener('click', () => finalizeBooking('Pay Now (placeholder)'));
+    document.getElementById('payLaterBtn').addEventListener('click', () => finalizeBooking('Pay on Wash'));
+  })();
+</script>
 </body>
 </html>
