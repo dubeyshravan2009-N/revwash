@@ -23,33 +23,50 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Premium Car Wash at Your Doorstep</h1>
-            <p>Fast, professional, and convenient. Book your car wash in seconds!</p>
-            <a href="booking.html" class="btn-primary">Book Now</a>
-        </div>
-    </section>
+   <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Premium Car Wash at Your Doorstep</h1>
+        <p>Fast, professional, and convenient. Book your car wash in seconds!</p>
+        <!-- Example: choose Toyota by default -->
+        <button class="btn-primary" onclick="selectBrand('Toyota')">Book Now</button>
+    </div>
+</section>
 
-    <!-- Services Preview -->
-    <section class="services-preview">
-        <h2>Our Services</h2>
-        <div class="service-cards">
-            <div class="card">
-                <h3>Exterior Wash</h3>
-                <p>Shine your car like new with our expert exterior cleaning service.</p>
-            </div>
-            <div class="card">
-                <h3>Interior Detailing</h3>
-                <p>Deep clean your car’s interior for a fresh and hygienic ride.</p>
-            </div>
-            <div class="card">
-                <h3>Full Detailing</h3>
-                <p>Complete car care package including interior & exterior detailing.</p>
-            </div>
+<!-- Services Preview -->
+<section class="services-preview">
+    <h2>Choose Your Car Brand</h2>
+    <div class="service-cards">
+        <div class="card" onclick="selectBrand('Toyota')">
+            <h3>Toyota</h3>
         </div>
-    </section>
+        <div class="card" onclick="selectBrand('Honda')">
+            <h3>Honda</h3>
+        </div>
+        <div class="card" onclick="selectBrand('Hyundai')">
+            <h3>Hyundai</h3>
+        </div>
+        <div class="card" onclick="selectBrand('Mahindra')">
+            <h3>Mahindra</h3>
+        </div>
+        <div class="card" onclick="selectBrand('Nissan')">
+            <h3>Nissan</h3>
+        </div>
+        <div class="card" onclick="selectBrand('Tata')">
+            <h3>Tata</h3>
+        </div>
+        <div class="card" onclick="selectBrand('Renault')">
+            <h3>Renault</h3>
+        </div>
+        <div class="card" onclick="selectBrand('BMW')">
+            <h3>BMW</h3>
+        </div>
+        <div class="card" onclick="selectBrand('Mercedes')">
+            <h3>Mercedes</h3>
+        </div>
+    </div>
+</section>
+
 
     <!-- Footer -->
     <footer>
