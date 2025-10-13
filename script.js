@@ -1,6 +1,6 @@
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAYRHW2Y_C9xAxdjii9VpdldW_FSfcHEsc",
+
   authDomain: "revwash-b60b5.firebaseapp.com",
   projectId: "revwash-b60b5",
   storageBucket: "revwash-b60b5.firebasestorage.app",
