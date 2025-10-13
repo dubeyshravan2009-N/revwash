@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RevvWash - Payment</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="RevvWash Logo">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="booking.html">Book Wash</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="services-preview">
+  <h2>Payment (Sample)</h2>
+  <p>Selected Car: <span id="carName"></span></p>
+  <p>Wash Type: <span id="washType"></span></p>
+
+  <div class="service-cards">
+    <div class="card">Credit Card</div>
+    <div class="card">UPI</div>
+    <div class="card">Wallet</div>
+    <div class="card">Net Banking</div>
+  </div>
+
+  <p style="margin-top:20px; color:gray;">*Payment functionality will be added later</p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 RevvWash. All Rights Reserved.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const brand = localStorage.getItem('selectedBrand');
+  const model = localStorage.getItem('selectedModel');
+  const wash = localStorage.getItem('selectedWash');
+  
+  document.getElementById('carName').innerText = model ? model : brand;
+  document.getElementById('washType').innerText = wash ? wash : 'Not selected';
+});
+</script>
+
+</body>
+</html>
