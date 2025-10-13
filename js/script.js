@@ -1,9 +1,12 @@
-// Populate brands
+// Populate car brands dynamically
 function populateBrands() {
   const container = document.getElementById('brandsContainer');
-  if (!container) return;
+  if (!container) {
+    console.error("Brands container not found!");
+    return;
+  }
 
-  const carModels = {
+  const carBrands = {
     "Toyota": ["Corolla","Camry","Fortuner","Hilux","Yaris"],
     "Honda": ["City","Civic","Jazz","WR-V","CR-V"],
     "Hyundai": ["i20","i10","Creta","Verna","Venue"],
@@ -15,8 +18,9 @@ function populateBrands() {
     "Mercedes": ["A-Class","C-Class","E-Class","GLA","GLC"]
   };
 
-  container.innerHTML = '';
-  Object.keys(carModels).forEach(brand => {
+  container.innerHTML = ''; // Clear previous brands
+
+  Object.keys(carBrands).forEach(brand => {
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerText = brand;
@@ -28,11 +32,14 @@ function populateBrands() {
   });
 }
 
-// Populate models
+// Populate models dynamically (called in models.html)
 function populateModels() {
   const brand = localStorage.getItem('selectedBrand');
   const container = document.getElementById('modelsContainer');
-  if (!brand || !container) return;
+  if (!brand || !container) {
+    console.error("Models container or selected brand not found!");
+    return;
+  }
 
   const carModels = {
     "Toyota": ["Corolla","Camry","Fortuner","Hilux","Yaris"],
@@ -47,6 +54,7 @@ function populateModels() {
   };
 
   container.innerHTML = '';
+
   carModels[brand].forEach(model => {
     const div = document.createElement('div');
     div.classList.add('card');
