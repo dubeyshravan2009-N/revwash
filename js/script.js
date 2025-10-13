@@ -14,10 +14,10 @@ const carModels = {
   "Mercedes": ["A-Class","C-Class","E-Class","GLA","GLC"]
 };
 
-// Populate brands in index.html
-function populateBrands(){
+// Populate brands on index.html
+function populateBrands() {
   const container = document.getElementById('brandsContainer');
-  container.innerHTML = ''; // clear any previous content
+  if (!container) return;
 
   const carModels = {
     "Toyota": ["Corolla","Camry","Fortuner","Hilux","Yaris"],
@@ -31,24 +31,37 @@ function populateBrands(){
     "Mercedes": ["A-Class","C-Class","E-Class","GLA","GLC"]
   };
 
+  container.innerHTML = '';
   Object.keys(carModels).forEach(brand => {
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerText = brand;
     div.addEventListener('click', () => {
       localStorage.setItem('selectedBrand', brand);
-      window.location.href='models.html';
+      window.location.href = 'models.html';
     });
     container.appendChild(div);
   });
 }
 
-
-// Populate models in models.html
-function populateModels(){
+// Populate models on models.html
+function populateModels() {
   const brand = localStorage.getItem('selectedBrand');
   const container = document.getElementById('modelsContainer');
-  if(!brand || !container) return;
+  if (!brand || !container) return;
+
+  const carModels = {
+    "Toyota": ["Corolla","Camry","Fortuner","Hilux","Yaris"],
+    "Honda": ["City","Civic","Jazz","WR-V","CR-V"],
+    "Hyundai": ["i20","i10","Creta","Verna","Venue"],
+    "Mahindra": ["Thar","XUV700","Scorpio","Bolero","XUV300"],
+    "Nissan": ["Magnite","Kicks","Leaf","Altima","GT-R"],
+    "Tata": ["Nexon","Harrier","Altroz","Punch","Safari"],
+    "Renault": ["Kiger","Triber","Kwid","Duster","Captur"],
+    "BMW": ["X5","X3","3 Series","5 Series","7 Series"],
+    "Mercedes": ["A-Class","C-Class","E-Class","GLA","GLC"]
+  };
+
   container.innerHTML = '';
   carModels[brand].forEach(model => {
     const div = document.createElement('div');
@@ -56,8 +69,9 @@ function populateModels(){
     div.innerText = model;
     div.addEventListener('click', () => {
       localStorage.setItem('selectedModel', model);
-      window.location.href='washType.html';
+      window.location.href = 'washType.html';
     });
     container.appendChild(div);
   });
 }
+
