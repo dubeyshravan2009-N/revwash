@@ -8,51 +8,33 @@
 </head>
 <body>
 
-<!-- Navbar -->
 <header class="navbar">
   <div class="logo">
     <img src="images/logo.png" alt="RevvWash Logo">
   </div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="booking.html">Book Wash</a></li>
-      <li><a href="packages.html">Packages</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-  </nav>
 </header>
 
 <section class="services-preview">
-  <h2>Payment (Sample)</h2>
-  <p>Selected Car: <span id="carName"></span></p>
+  <h2>Payment Options</h2>
+  <p>Car: <span id="carName"></span></p>
   <p>Wash Type: <span id="washType"></span></p>
-
   <div class="service-cards">
-    <div class="card">Credit Card</div>
-    <div class="card">UPI</div>
-    <div class="card">Wallet</div>
-    <div class="card">Net Banking</div>
+    <div class="card" id="payNow">Pay Now</div>
+    <div class="card" id="payLater">Pay on Wash</div>
   </div>
-
-  <p style="margin-top:20px; color:gray;">*Payment functionality will be added later</p>
 </section>
 
-<!-- Footer -->
 <footer>
   <p>© 2025 RevvWash. All Rights Reserved.</p>
 </footer>
 
+<script src="script.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const brand = localStorage.getItem('selectedBrand');
-  const model = localStorage.getItem('selectedModel');
-  const wash = localStorage.getItem('selectedWash');
-  
-  document.getElementById('carName').innerText = model ? model : brand;
-  document.getElementById('washType').innerText = wash ? wash : 'Not selected';
-});
-</script>
+  document.getElementById('carName').innerText = localStorage.getItem('selectedModel');
+  document.getElementById('washType').innerText = localStorage.getItem('selectedWash');
 
+  document.getElementById('payNow').addEventListener('click', ()=>{ window.location.href='thankYou.html'; });
+  document.getElementById('payLater').addEventListener('click', ()=>{ window.location.href='thankYou.html'; });
+</script>
 </body>
 </html>
