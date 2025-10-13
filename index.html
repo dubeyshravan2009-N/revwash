@@ -6,11 +6,18 @@
   <title>RevvWash | Home</title>
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Favicon (make sure the file exists in images/) -->
-  <link rel="icon" href="images/favicon.ico">
+  <style>
+    /* Simple animations */
+    .fade-in { animation: fadeIn 0.5s ease forwards; opacity: 0; }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    .card { cursor: pointer; transition: transform 0.3s; }
+    .card:hover { transform: scale(1.05); }
+  </style>
 </head>
 <body>
 
+<!-- Navbar -->
 <header class="navbar">
   <div class="logo">
     <img src="images/logo.png" alt="RevvWash Logo">
@@ -25,7 +32,7 @@
 </header>
 
 <!-- Hero Section -->
-<section class="hero" id="hero">
+<section class="hero fade-in" id="hero">
   <div class="hero-content">
     <h1>Premium Car Wash at Your Doorstep</h1>
     <p>Fast, professional, and convenient. Book your car wash in seconds!</p>
@@ -34,10 +41,10 @@
 </section>
 
 <!-- Brand Selection Section -->
-<section class="services-preview" id="brandSelection" style="display:none;">
+<section class="services-preview fade-in" id="brandSelection" style="display:none;">
   <h2>Select Your Car Brand</h2>
   <div class="service-cards" id="brandsContainer">
-    <!-- Brands populated dynamically by JS -->
+    <!-- Brands added dynamically -->
   </div>
 </section>
 
@@ -45,10 +52,8 @@
   <p>© 2025 RevvWash. All Rights Reserved.</p>
 </footer>
 
-<!-- Scripts -->
 <script src="script.js"></script>
 <script>
-  // Show brand selection when Book Now clicked
   document.getElementById('bookNowBtn').addEventListener('click', () => {
     document.getElementById('hero').style.display = 'none';
     document.getElementById('brandSelection').style.display = 'block';
