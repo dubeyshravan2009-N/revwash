@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RevvWash - Car Models</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .fade-in { animation: fadeIn 0.5s ease forwards; opacity: 0; }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    .card { cursor: pointer; transition: transform 0.3s; }
+    .card:hover { transform: scale(1.05); }
+  </style>
 </head>
 <body>
 
@@ -21,7 +28,7 @@
   </nav>
 </header>
 
-<section class="services-preview">
+<section class="services-preview fade-in">
   <h2>Select Your Car Model</h2>
   <div class="service-cards" id="modelsContainer">
     <!-- Models populated dynamically -->
@@ -34,7 +41,9 @@
 
 <script src="script.js"></script>
 <script>
-  populateModels();
+  window.onload = populateModels;
 </script>
+
 </body>
 </html>
+
