@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>RevvWash - Thank You</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .fade-in { animation: fadeIn 0.5s ease forwards; opacity: 0; }
-    @keyframes fadeIn { to { opacity: 1; } }
+    .fade-in { animation: revvFadeIn .45s ease both; }
+    @keyframes revvFadeIn { from { opacity: 0; transform: translateY(6px);} to { opacity:1; transform: translateY(0);} }
+    .summary { margin-top:10px; color:#333; }
+    .btn-primary { cursor:pointer; }
   </style>
 </head>
 <body>
 
 <header class="navbar">
-  <div class="logo">
-    <img src="images/logo.png" alt="RevvWash Logo">
-  </div>
+  <div class="logo"><img src="images/logo.png" alt="RevvWash logo"></div>
 </header>
 
 <section class="services-preview fade-in">
   <h2>Thank You!</h2>
-  <p>Your booking is confirmed. Welcome again!</p>
+  <p>Welcome again — your booking is recorded.</p>
+
+  <div class="summary" id="bookingSummary">
+    <!-- summary injected by script -->
+  </div>
+
+  <a class="btn-primary" href="index.html" style="display:inline-block; margin-top:12px;">Back to Home</a>
 </section>
 
 <footer>
   <p>© 2025 RevvWash. All Rights Reserved.</p>
 </footer>
+
+<script>
+  (function(){
+    const raw = localStorage.getItem('lastBooking');
+    if(!raw) {
+      document.getElementById('bookingSummary').innerText = 'No booking data was found.';
+      return;
+    }
+    const b = JSON.parse(raw);
+    const dt = new Date(b.time);
+    const html = `
+      <p><strong>Brand:</strong> ${b.brand}</p>
+      <p><strong>Model:</strong> ${b.model}</p>
+      <p><strong>Wash:</strong> ${b.wash}</p>
+      <p><strong>Payment Mode:</strong> ${b.paymentMode}</p>
+      <p style="margin-top:8px; color:#666;">Booking time: ${dt.toLocaleString()}</p>
+    `;
+    document.getElementById('bookingSummary').innerHTML = html;
+
+    // clear intermediate selections if you want (optional)
+    localStorage.removeItem('selectedBrand');
+    localStorage.removeItem('selectedModel');
+    localStorage.removeItem('selectedWash');
+  })();
+</script>
 
 </body>
 </html>
