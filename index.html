@@ -12,6 +12,8 @@
 
     .card { cursor: pointer; transition: transform 0.3s; }
     .card:hover { transform: scale(1.05); }
+    .btn-primary { cursor: pointer; transition: transform 0.3s; }
+    .btn-primary:hover { transform: scale(1.05); }
   </style>
 </head>
 <body>
@@ -40,7 +42,7 @@
 <section class="services-preview fade-in" id="brandSelection" style="display:none;">
   <h2>Select Your Car Brand</h2>
   <div class="service-cards" id="brandsContainer">
-    <!-- Brands added dynamically -->
+    <!-- Brands populated dynamically -->
   </div>
 </section>
 
@@ -51,8 +53,11 @@
 <script src="script.js"></script>
 <script>
   document.getElementById('bookNowBtn').addEventListener('click', () => {
+    // Hide hero, show brand selection
     document.getElementById('hero').style.display = 'none';
     document.getElementById('brandSelection').style.display = 'block';
+
+    // Populate brands dynamically
     populateBrands();
   });
 </script>
