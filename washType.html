@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RevvWash - Choose Wash Type</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="RevvWash Logo">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="booking.html">Book Wash</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="services-preview">
+  <h2>Choose Wash Type for Your Car</h2>
+  <div class="service-cards" id="washTypeContainer">
+    <div class="card" data-wash="Full Body Wash">Full Body Wash</div>
+    <div class="card" data-wash="No Water Wash">No Water Wash</div>
+    <div class="card" data-wash="Just Polish Work">Just Polish Work</div>
+    <div class="card" data-wash="Interior Clean">Interior Clean</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 RevvWash. All Rights Reserved.</p>
+</footer>
+
+<script>
+document.getElementById('washTypeContainer').addEventListener('click', function(e){
+  if(e.target && e.target.classList.contains('card')){
+    const selectedWash = e.target.getAttribute('data-wash');
+    localStorage.setItem('selectedWash', selectedWash);
+    window.location.href = 'payment.html';
+  }
+});
+</script>
+
+</body>
+</html>
