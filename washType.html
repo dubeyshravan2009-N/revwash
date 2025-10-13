@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>RevvWash - Wash Type</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .fade-in { animation: fadeIn 0.5s ease forwards; opacity: 0; }
-    @keyframes fadeIn { to { opacity: 1; } }
-    .card { cursor: pointer; transition: transform 0.3s; }
-    .card:hover { transform: scale(1.05); }
+    .fade-in { animation: revvFadeIn .45s ease both; }
+    @keyframes revvFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity:1; transform: translateY(0);} }
+    .card { cursor:pointer; transition: transform .22s ease; }
+    .card:hover { transform: translateY(-6px) scale(1.02); }
+    .summary { margin-top:10px; color:#555; }
   </style>
 </head>
 <body>
-
 <header class="navbar">
-  <div class="logo">
-    <img src="images/logo.png" alt="RevvWash Logo">
-  </div>
+  <div class="logo"><img src="images/logo.png" alt="RevvWash logo"></div>
 </header>
 
 <section class="services-preview fade-in">
-  <h2>Select Wash Type</h2>
+  <h2>Choose Wash Type</h2>
+  <p class="summary">Selected: <span id="summaryBrandModel">—</span></p>
+
   <div class="service-cards" id="washContainer">
     <div class="card" data-wash="Full Body Wash">Full Body Wash</div>
-    <div class="card" data-wash="No Water Wash">No Water Wash</div>
-    <div class="card" data-wash="Polish Work">Polish Work</div>
+    <div class="card" data-wash="Less Water Wash">Less Water Wash</div>
+    <div class="card" data-wash="Just Polish Work">Just Polish Work</div>
     <div class="card" data-wash="Interior Clean">Interior Clean</div>
   </div>
 </section>
@@ -34,15 +34,25 @@
   <p>© 2025 RevvWash. All Rights Reserved.</p>
 </footer>
 
+<script src="script.js"></script>
 <script>
-  const washCards = document.querySelectorAll('#washContainer .card');
-  washCards.forEach(card => {
-    card.addEventListener('click', () => {
-      localStorage.setItem('selectedWash', card.dataset.wash);
+  // show selected brand+model for clarity
+  (function(){
+    const brand = localStorage.getItem('selectedBrand') || '—';
+    const model = localStorage.getItem('selectedModel') || '—';
+    document.getElementById('summaryBrandModel').innerText = `${brand} · ${model}`;
+
+    // wire up wash cards
+    const washContainer = document.getElementById('washContainer');
+    washContainer.addEventListener('click', (e) => {
+      const card = e.target.closest('.card');
+      if(!card) return;
+      const wash = card.dataset.wash;
+      localStorage.setItem('selectedWash', wash);
+      // go to payment placeholder
       window.location.href = 'payment.html';
     });
-  });
+  })();
 </script>
-
 </body>
 </html>
