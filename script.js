@@ -1,60 +1,70 @@
-// Populate car brands dynamically
+// central place for brands/models so both functions use same data
+const REVV_CAR_DATA = {
+  "Toyota": ["Corolla","Camry","Fortuner","Hilux","Yaris"],
+  "Honda": ["City","Civic","Jazz","WR-V","CR-V"],
+  "Hyundai": ["i20","i10","Creta","Verna","Venue"],
+  "Mahindra": ["Thar","XUV700","Scorpio","Bolero","XUV300"],
+  "Nissan": ["Magnite","Kicks","Leaf","Altima","GT-R"],
+  "Tata": ["Nexon","Harrier","Altroz","Punch","Safari"],
+  "Renault": ["Kiger","Triber","Kwid","Duster","Captur"],
+  "BMW": ["X5","X3","3 Series","5 Series","7 Series"],
+  "Mercedes": ["A-Class","C-Class","E-Class","GLA","GLC"]
+};
+
+// populate brand cards (index.html)
 function populateBrands() {
   const container = document.getElementById('brandsContainer');
-  if (!container) { console.error("Brands container not found!"); return; }
-
-  const carBrands = {
-    "Toyota": ["Corolla","Camry","Fortuner","Hilux","Yaris"],
-    "Honda": ["City","Civic","Jazz","WR-V","CR-V"],
-    "Hyundai": ["i20","i10","Creta","Verna","Venue"],
-    "Mahindra": ["Thar","XUV700","Scorpio","Bolero","XUV300"],
-    "Nissan": ["Magnite","Kicks","Leaf","Altima","GT-R"],
-    "Tata": ["Nexon","Harrier","Altroz","Punch","Safari"],
-    "Renault": ["Kiger","Triber","Kwid","Duster","Captur"],
-    "BMW": ["X5","X3","3 Series","5 Series","7 Series"],
-    "Mercedes": ["A-Class","C-Class","E-Class","GLA","GLC"]
-  };
-
+  if (!container) {
+    console.error('populateBrands: brandsContainer not found');
+    return;
+  }
   container.innerHTML = '';
-  Object.keys(carBrands).forEach(brand => {
-    const div = document.createElement('div');
-    div.classList.add('card');
-    div.innerText = brand;
-    div.addEventListener('click', () => {
+  Object.keys(REVV_CAR_DATA).forEach(brand => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerText = brand;
+    card.addEventListener('click', () => {
+      // store selection and go to models page
       localStorage.setItem('selectedBrand', brand);
+      // navigate
       window.location.href = 'models.html';
     });
-    container.appendChild(div);
+    container.appendChild(card);
   });
 }
 
-// Populate models dynamically
+// populate models for selected brand (models.html)
 function populateModels() {
   const brand = localStorage.getItem('selectedBrand');
   const container = document.getElementById('modelsContainer');
-  if (!brand || !container) { console.error("Models container or selected brand not found!"); return; }
+  const titleNode = document.getElementById('modelsTitle');
+  const noteNode = document.getElementById('selectedBrandNote');
+  if (!container) {
+    console.error('populateModels: modelsContainer not found');
+    return;
+  }
+  if (!brand) {
+    container.innerHTML = '<p style="color:#666;">No brand selected — please go back and choose a brand.</p>';
+    if (titleNode) titleNode.innerText = 'Select Your Car Model';
+    if (noteNode) noteNode.innerText = '';
+    return;
+  }
 
-  const carModels = {
-    "Toyota": ["Corolla","Camry","Fortuner","Hilux","Yaris"],
-    "Honda": ["City","Civic","Jazz","WR-V","CR-V"],
-    "Hyundai": ["i20","i10","Creta","Verna","Venue"],
-    "Mahindra": ["Thar","XUV700","Scorpio","Bolero","XUV300"],
-    "Nissan": ["Magnite","Kicks","Leaf","Altima","GT-R"],
-    "Tata": ["Nexon","Harrier","Altroz","Punch","Safari"],
-    "Renault": ["Kiger","Triber","Kwid","Duster","Captur"],
-    "BMW": ["X5","X3","3 Series","5 Series","7 Series"],
-    "Mercedes": ["A-Class","C-Class","E-Class","GLA","GLC"]
-  };
+  // update small UI hints
+  if (titleNode) titleNode.innerText = `Select Your ${brand} Model`;
+  if (noteNode) noteNode.innerText = `Brand selected: ${brand}`;
 
+  const models = REVV_CAR_DATA[brand] || [];
   container.innerHTML = '';
-  carModels[brand].forEach(model => {
-    const div = document.createElement('div');
-    div.classList.add('card');
-    div.innerText = model;
-    div.addEventListener('click', () => {
+  models.forEach(model => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerText = model;
+    card.addEventListener('click', () => {
       localStorage.setItem('selectedModel', model);
+      // go to wash selection
       window.location.href = 'washType.html';
     });
-    container.appendChild(div);
+    container.appendChild(card);
   });
 }
