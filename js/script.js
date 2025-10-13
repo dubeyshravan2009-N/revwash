@@ -1,20 +1,4 @@
-// Disable right-click
-document.addEventListener('contextmenu', e => e.preventDefault());
-
-// Car Brands and Models
-const carModels = {
-  "Toyota": ["Corolla","Camry","Fortuner","Hilux","Yaris"],
-  "Honda": ["City","Civic","Jazz","WR-V","CR-V"],
-  "Hyundai": ["i20","i10","Creta","Verna","Venue"],
-  "Mahindra": ["Thar","XUV700","Scorpio","Bolero","XUV300"],
-  "Nissan": ["Magnite","Kicks","Leaf","Altima","GT-R"],
-  "Tata": ["Nexon","Harrier","Altroz","Punch","Safari"],
-  "Renault": ["Kiger","Triber","Kwid","Duster","Captur"],
-  "BMW": ["X5","X3","3 Series","5 Series","7 Series"],
-  "Mercedes": ["A-Class","C-Class","E-Class","GLA","GLC"]
-};
-
-// Populate brands on index.html
+// Populate brands
 function populateBrands() {
   const container = document.getElementById('brandsContainer');
   if (!container) return;
@@ -44,7 +28,7 @@ function populateBrands() {
   });
 }
 
-// Populate models on models.html
+// Populate models
 function populateModels() {
   const brand = localStorage.getItem('selectedBrand');
   const container = document.getElementById('modelsContainer');
@@ -74,4 +58,3 @@ function populateModels() {
     container.appendChild(div);
   });
 }
-
