@@ -1,82 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RevvWash | Home</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RevvWash | Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="logo">
-            <img src="images/logo.png" alt="RevvWash Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="booking.html">Book Wash</a></li>
-                <li><a href="packages.html">Packages</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
 
-   <!-- Hero Section -->
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="RevvWash Logo">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
 <section class="hero">
-    <div class="hero-content">
-        <h1>Premium Car Wash at Your Doorstep</h1>
-        <p>Fast, professional, and convenient. Book your car wash in seconds!</p>
-        <!-- Example: choose Toyota by default -->
-        <button class="btn-primary" onclick="selectBrand('Toyota')">Book Now</button>
-    </div>
+  <div class="hero-content">
+    <h1>Premium Car Wash at Your Doorstep</h1>
+    <p>Fast, professional, and convenient. Book your car wash in seconds!</p>
+    <button class="btn-primary" id="bookNowBtn">Book Now</button>
+  </div>
 </section>
 
-<!-- Services Preview -->
-<section class="services-preview">
-    <h2>Choose Your Car Brand</h2>
-    <div class="service-cards">
-        <div class="card" onclick="selectBrand('Toyota')">
-            <h3>Toyota</h3>
-        </div>
-        <div class="card" onclick="selectBrand('Honda')">
-            <h3>Honda</h3>
-        </div>
-        <div class="card" onclick="selectBrand('Hyundai')">
-            <h3>Hyundai</h3>
-        </div>
-        <div class="card" onclick="selectBrand('Mahindra')">
-            <h3>Mahindra</h3>
-        </div>
-        <div class="card" onclick="selectBrand('Nissan')">
-            <h3>Nissan</h3>
-        </div>
-        <div class="card" onclick="selectBrand('Tata')">
-            <h3>Tata</h3>
-        </div>
-        <div class="card" onclick="selectBrand('Renault')">
-            <h3>Renault</h3>
-        </div>
-        <div class="card" onclick="selectBrand('BMW')">
-            <h3>BMW</h3>
-        </div>
-        <div class="card" onclick="selectBrand('Mercedes')">
-            <h3>Mercedes</h3>
-        </div>
-    </div>
+<section class="services-preview" id="brandSelection" style="display:none;">
+  <h2>Select Your Car Brand</h2>
+  <div class="service-cards" id="brandsContainer">
+    <!-- Brands will be populated dynamically -->
+  </div>
 </section>
 
+<footer>
+  <p>© 2025 RevvWash. All Rights Reserved.</p>
+</footer>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 RevvWash. All Rights Reserved.</p>
-        <div class="socials">
-            <a href="https://instagram.com/shravan_dubey_2009" target="_blank">Instagram</a>
-            <a href="mailto:dubeyshravan2009@gmail.com">Email</a>
-            <a href="https://instagram.com/sharma9ty" target="_blank">Siddharth Instagram</a>
-            <a href="mailto:Siddharth.sharma020202@gmail.com">Siddharth Email</a>
-        </div>
-    </footer>
+<script src="script.js"></script>
+<script>
+  // Show brand selection when Book Now clicked
+  document.getElementById('bookNowBtn').addEventListener('click', () => {
+    document.getElementById('hero').style.display = 'none';
+    document.getElementById('brandSelection').style.display = 'block';
+    populateBrands();
+  });
+</script>
+
 </body>
 </html>
