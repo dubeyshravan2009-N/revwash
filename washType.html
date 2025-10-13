@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RevvWash - Wash Type</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .fade-in { animation: fadeIn 0.5s ease forwards; opacity: 0; }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    .card { cursor: pointer; transition: transform 0.3s; }
+    .card:hover { transform: scale(1.05); }
+  </style>
 </head>
 <body>
 
@@ -21,12 +28,12 @@
   </nav>
 </header>
 
-<section class="services-preview">
-  <h2>Choose Wash Type</h2>
-  <div class="service-cards" id="washTypeContainer">
+<section class="services-preview fade-in">
+  <h2>Select Wash Type</h2>
+  <div class="service-cards" id="washContainer">
     <div class="card" data-wash="Full Body Wash">Full Body Wash</div>
     <div class="card" data-wash="No Water Wash">No Water Wash</div>
-    <div class="card" data-wash="Just Polish Work">Just Polish Work</div>
+    <div class="card" data-wash="Polish Work">Polish Work</div>
     <div class="card" data-wash="Interior Clean">Interior Clean</div>
   </div>
 </section>
@@ -37,12 +44,14 @@
 
 <script src="script.js"></script>
 <script>
-  document.getElementById('washTypeContainer').addEventListener('click', (e)=>{
-    if(e.target.classList.contains('card')){
-      localStorage.setItem('selectedWash', e.target.getAttribute('data-wash'));
-      window.location.href='payment.html';
-    }
+  const washCards = document.querySelectorAll('#washContainer .card');
+  washCards.forEach(card => {
+    card.addEventListener('click', () => {
+      localStorage.setItem('selectedWash', card.dataset.wash);
+      window.location.href = 'payment.html';
+    });
   });
 </script>
+
 </body>
 </html>
