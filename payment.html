@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RevvWash - Payment</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .fade-in { animation: fadeIn 0.5s ease forwards; opacity: 0; }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    .btn-primary { cursor: pointer; transition: transform 0.3s; }
+    .btn-primary:hover { transform: scale(1.05); }
+  </style>
 </head>
 <body>
 
@@ -14,27 +21,21 @@
   </div>
 </header>
 
-<section class="services-preview">
-  <h2>Payment Options</h2>
-  <p>Car: <span id="carName"></span></p>
-  <p>Wash Type: <span id="washType"></span></p>
-  <div class="service-cards">
-    <div class="card" id="payNow">Pay Now</div>
-    <div class="card" id="payLater">Pay on Wash</div>
-  </div>
+<section class="services-preview fade-in">
+  <h2>Payment</h2>
+  <p>This is a sample payment page. Actual payment functionality will be added later.</p>
+  <button class="btn-primary" id="payBtn">Pay on Wash / Continue</button>
 </section>
 
 <footer>
   <p>© 2025 RevvWash. All Rights Reserved.</p>
 </footer>
 
-<script src="script.js"></script>
 <script>
-  document.getElementById('carName').innerText = localStorage.getItem('selectedModel');
-  document.getElementById('washType').innerText = localStorage.getItem('selectedWash');
-
-  document.getElementById('payNow').addEventListener('click', ()=>{ window.location.href='thankYou.html'; });
-  document.getElementById('payLater').addEventListener('click', ()=>{ window.location.href='thankYou.html'; });
+  document.getElementById('payBtn').addEventListener('click', () => {
+    window.location.href = 'thankYou.html';
+  });
 </script>
+
 </body>
 </html>
