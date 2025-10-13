@@ -1,6 +1,6 @@
 
 const firebaseConfig = {
-
+const GOOGLE_API_KEY = "REDACTED"; // Key removed for security
   authDomain: "revwash-b60b5.firebaseapp.com",
   projectId: "revwash-b60b5",
   storageBucket: "revwash-b60b5.firebasestorage.app",
