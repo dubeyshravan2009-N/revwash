@@ -1,3 +1,12 @@
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAYRHW2Y_C9xAxdjii9VpdldW_FSfcHEsc",
+  authDomain: "revwash-b60b5.firebaseapp.com",
+  projectId: "revwash-b60b5",
+  storageBucket: "revwash-b60b5.firebasestorage.app",
+  messagingSenderId: "190105346093",
+  appId: "1:190105346093:web:b33091abe78cd32ae9d8a4"
+};
 // central place for brands/models so both functions use same data
 const REVV_CAR_DATA = {
   "Toyota": ["Corolla","Camry","Fortuner","Hilux","Yaris"],
