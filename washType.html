@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RevvWash - Choose Wash Type</title>
+  <title>RevvWash - Wash Type</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Navbar -->
 <header class="navbar">
   <div class="logo">
     <img src="images/logo.png" alt="RevvWash Logo">
@@ -16,7 +15,6 @@
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="booking.html">Book Wash</a></li>
       <li><a href="packages.html">Packages</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
@@ -24,7 +22,7 @@
 </header>
 
 <section class="services-preview">
-  <h2>Choose Wash Type for Your Car</h2>
+  <h2>Choose Wash Type</h2>
   <div class="service-cards" id="washTypeContainer">
     <div class="card" data-wash="Full Body Wash">Full Body Wash</div>
     <div class="card" data-wash="No Water Wash">No Water Wash</div>
@@ -33,20 +31,18 @@
   </div>
 </section>
 
-<!-- Footer -->
 <footer>
   <p>© 2025 RevvWash. All Rights Reserved.</p>
 </footer>
 
+<script src="script.js"></script>
 <script>
-document.getElementById('washTypeContainer').addEventListener('click', function(e){
-  if(e.target && e.target.classList.contains('card')){
-    const selectedWash = e.target.getAttribute('data-wash');
-    localStorage.setItem('selectedWash', selectedWash);
-    window.location.href = 'payment.html';
-  }
-});
+  document.getElementById('washTypeContainer').addEventListener('click', (e)=>{
+    if(e.target.classList.contains('card')){
+      localStorage.setItem('selectedWash', e.target.getAttribute('data-wash'));
+      window.location.href='payment.html';
+    }
+  });
 </script>
-
 </body>
 </html>
