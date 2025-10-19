@@ -5,17 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up | RevvWash</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* extra lightweight styling for greeting */
+    #greeting { display:none; margin-top:15px; color: #0a7fff; }
+    .auth-section input { display:block; width: 100%; padding:10px; margin:10px 0; border-radius:6px; border:1px solid #ccc; }
+    .auth-section button { padding:10px 20px; border:none; border-radius:6px; background:#0a7fff; color:white; cursor:pointer; transition:transform .15s; }
+    .auth-section button:active { transform: scale(.98); }
+  </style>
 </head>
 <body>
+
   <section class="auth-section">
     <h2>Create Account</h2>
-    <input type="text" id="name" placeholder="Full Name" required />
-    <input type="email" id="email" placeholder="Email" required />
-    <input type="password" id="password" placeholder="Password" required />
+
+    <input type="text" id="fullName" placeholder="Full Name" required />
+    <input type="email" id="email" placeholder="Email ID" required />
+    <input type="text" id="address" placeholder="Address" required />
+
     <button id="signupBtn">Sign Up</button>
+
+    <div id="greeting">
+      <h3>WELCOME, <span id="customerName"></span>!</h3>
+    </div>
+
     <p>Already have an account? <a href="login.html">Login here</a></p>
   </section>
 
-  <script src="script.js"></script>
+  <script>
+    // Step 1: front-end JS to handle form submission and greeting
+    document.getElementById('signupBtn').addEventListener('click', () => {
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const address = document.getElementById('address').value.trim();
+
+      if (!fullName || !email || !address) {
+        alert('Please fill all fields!');
+        return;
+      }
+
+      // Show welcome message
+      document.getElementById('customerName').innerText = fullName;
+      document.getElementById('greeting').style.display = 'block';
+
+      // Reset inputs
+      document.getElementById('fullName').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('address').value = '';
+    });
+  </script>
+
 </body>
 </html>
