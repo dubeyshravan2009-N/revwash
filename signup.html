@@ -6,53 +6,61 @@
   <title>Sign Up | RevvWash</title>
   <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* extra lightweight styling for greeting */
-    #greeting { display:none; margin-top:15px; color: #0a7fff; }
-    .auth-section input { display:block; width: 100%; padding:10px; margin:10px 0; border-radius:6px; border:1px solid #ccc; }
-    .auth-section button { padding:10px 20px; border:none; border-radius:6px; background:#0a7fff; color:white; cursor:pointer; transition:transform .15s; }
-    .auth-section button:active { transform: scale(.98); }
+    /* Quick inline style for welcome message */
+    #welcomeMsg {
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-
   <section class="auth-section">
     <h2>Create Account</h2>
-
-    <input type="text" id="fullName" placeholder="Full Name" required />
-    <input type="email" id="email" placeholder="Email ID" required />
+    <input type="text" id="name" placeholder="Full Name" required />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
     <input type="text" id="address" placeholder="Address" required />
-
     <button id="signupBtn">Sign Up</button>
-
-    <div id="greeting">
-      <h3>WELCOME, <span id="customerName"></span>!</h3>
-    </div>
-
+    <p id="welcomeMsg"></p>
     <p>Already have an account? <a href="login.html">Login here</a></p>
   </section>
 
   <script>
-    // Step 1: front-end JS to handle form submission and greeting
-    document.getElementById('signupBtn').addEventListener('click', () => {
-      const fullName = document.getElementById('fullName').value.trim();
+    document.getElementById('signupBtn').addEventListener('click', async () => {
+      const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
       const address = document.getElementById('address').value.trim();
+      const welcomeMsg = document.getElementById('welcomeMsg');
 
-      if (!fullName || !email || !address) {
-        alert('Please fill all fields!');
+      if(!name || !email || !password || !address){
+        alert("Please fill all fields!");
         return;
       }
 
-      // Show welcome message
-      document.getElementById('customerName').innerText = fullName;
-      document.getElementById('greeting').style.display = 'block';
+      try {
+        const res = await fetch('http://localhost:3000/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, address })
+        });
 
-      // Reset inputs
-      document.getElementById('fullName').value = '';
-      document.getElementById('email').value = '';
-      document.getElementById('address').value = '';
+        const text = await res.text();
+
+        // Show WELCOME greeting after successful signup
+        if(res.ok){
+          welcomeMsg.innerText = `WELCOME, ${name.toUpperCase()}! Your account has been created.`;
+        } else {
+          welcomeMsg.innerText = '';
+          alert(text);
+        }
+      } catch (err) {
+        console.error(err);
+        welcomeMsg.innerText = '';
+        alert('Error submitting form!');
+      }
     });
   </script>
-
 </body>
 </html>
